@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """Package for PythonTemplateDemo."""
 
 __project__ = 'PythonTemplateDemo'
