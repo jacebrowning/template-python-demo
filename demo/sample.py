@@ -3,9 +3,9 @@
 
 def function(value):
     """A function with branches to demonstrate branch coverage reporting."""
-    if value is True:
+    if value == True:
         return 'True'
-    elif value is False:
+    elif value == False:
         return 'False'
     else:
         return 'None'
