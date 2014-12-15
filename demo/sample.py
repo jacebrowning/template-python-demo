@@ -8,4 +8,4 @@ def function(value):
     elif value is False:
         return 'False'
     else:
-        return 'None'
+        return 'Null'
