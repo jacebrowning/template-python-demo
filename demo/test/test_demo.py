@@ -32,3 +32,8 @@ class TestDemo(unittest.TestCase):
         self.assertEquals(sample.function(True), 'True')
         self.assertEquals(sample.function(False), 'False')
         self.assertEquals(sample.function(None), 'None')
+
+    def test_another_function(self):
+        """Verify another function works as expected."""
+        self.assertTrue(sample.another_function("abc123"))
+        self.assertFalse(sample.another_function(""))
