@@ -9,3 +9,10 @@ def function(value):
         return 'False'
     else:
         return 'None'
+
+
+def another_function(text):
+    """Another sample function."""
+    print(text)
+    if text:
+        return True
