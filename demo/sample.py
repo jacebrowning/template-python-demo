@@ -2,7 +2,9 @@
 
 
 def function(value):
-    """A function with branches to demonstrate branch coverage reporting."""
+    """
+    Returns a value.
+    """
     if value is True:
         return 'True'
     elif value is False:
