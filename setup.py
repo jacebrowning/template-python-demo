@@ -1,8 +1,6 @@
 #!/usr/bin/env python
 
-"""
-Setup script for PythonTemplateDemo.
-"""
+"""Setup script for PythonTemplateDemo."""
 
 import setuptools
 
