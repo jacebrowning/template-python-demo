@@ -5,7 +5,7 @@ __version__ = '0.0.0'
 
 VERSION = __project__ + '-' + __version__
 
-PYTHON_VERSION = 3, 4
+PYTHON_VERSION = 2, 7
 
 import sys
 if not sys.version_info >= PYTHON_VERSION:  # pragma: no cover (manual test)

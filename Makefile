@@ -1,7 +1,7 @@
 # Python settings
 ifndef TRAVIS
-	PYTHON_MAJOR := 3
-	PYTHON_MINOR := 4
+	PYTHON_MAJOR := 2
+	PYTHON_MINOR := 7
 endif
 
 # Test runner settings
