@@ -42,7 +42,7 @@ After installation, abstract base classes can be imported from the package:
 ```
 $ python
 >>> import demo
-demo.__version__
+>>> demo.__version__
 ```
 
 PythonTemplateDemo doesn't do anything, it's a template.
