@@ -170,19 +170,19 @@ fix: depends-dev
 test: depends-ci .clean-test
 	$(NOSE) --config=.noserc
 ifndef TRAVIS
-	$(COVERAGE) html --directory .coverage-html --fail-under=$(UNIT_TEST_COVERAGE)
+	$(COVERAGE) html --directory htmlcov --fail-under=$(UNIT_TEST_COVERAGE)
 endif
 
 .PHONY: tests
 tests: depends-ci .clean-test
 	TEST_INTEGRATION=1 $(NOSE) --config=.noserc --cover-package=$(PACKAGE) -xv
 ifndef TRAVIS
-	$(COVERAGE) html --directory .coverage-html --fail-under=$(INTEGRATION_TEST_COVERAGE)
+	$(COVERAGE) html --directory htmlcov --fail-under=$(INTEGRATION_TEST_COVERAGE)
 endif
 
 .PHONY: read-coverage
 read-coverage:
-	$(OPEN) .coverage-html/index.html
+	$(OPEN) htmlcov/index.html
 
 # Cleanup ######################################################################
 
@@ -209,7 +209,7 @@ clean-all: clean clean-env .clean-workspace
 
 .PHONY: .clean-test
 .clean-test:
-	rm -rf .coverage .coverage-html
+	rm -rf .coverage htmlcov
 
 .PHONY: .clean-dist
 .clean-dist:
