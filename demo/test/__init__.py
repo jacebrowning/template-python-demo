@@ -1,1 +1,1 @@
-"""Tests for the `demo` package."""
+"""Unit tests for the `demo` package."""
