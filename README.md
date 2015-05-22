@@ -44,5 +44,3 @@ $ python
 >>> import demo
 >>> demo.__version__
 ```
-
-PythonTemplateDemo doesn't do anything, it's a template.
