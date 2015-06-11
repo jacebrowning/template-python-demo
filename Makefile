@@ -104,7 +104,7 @@ depends: depends-ci depends-dev
 .PHONY: depends-ci
 depends-ci: env Makefile $(DEPENDS_CI_FLAG)
 $(DEPENDS_CI_FLAG): Makefile
-	$(PIP) install --upgrade pep8 pep257 pylint coverage nose
+	$(PIP) install --upgrade pep8 pep257 pylint coverage nose nose-cov
 	@ touch $(DEPENDS_CI_FLAG)  # flag to indicate dependencies are installed
 
 .PHONY: depends-dev
@@ -183,7 +183,7 @@ fix: depends-dev
 
 # Testing ######################################################################
 
-NOSE_OPTS := --with-doctest --with-coverage --cover-package=$(PACKAGE)
+NOSE_OPTS := --with-doctest --with-cov --cov=$(PACKAGE) --cov-report=html
 
 .PHONY: test-unit
 test-unit: test
@@ -191,14 +191,14 @@ test-unit: test
 test: depends-ci .clean-test
 	$(NOSE) $(PACKAGE) $(NOSE_OPTS)
 ifndef TRAVIS
-	$(COVERAGE) html --directory htmlcov --fail-under=$(UNIT_TEST_COVERAGE)
+	$(COVERAGE) report --show-missing --fail-under=$(UNIT_TEST_COVERAGE)
 endif
 
 .PHONY: test-int
 test-int: depends-ci .clean-test
 	$(NOSE) tests $(NOSE_OPTS)
 ifndef TRAVIS
-	$(COVERAGE) html --directory htmlcov --fail-under=$(INTEGRATION_TEST_COVERAGE)
+	$(COVERAGE) report --show-missing --fail-under=$(INTEGRATION_TEST_COVERAGE)
 endif
 
 .PHONY: test-all
@@ -207,7 +207,7 @@ test-all: tests
 tests: depends-ci .clean-test
 	$(NOSE) $(PACKAGE) tests $(NOSE_OPTS) -xv
 ifndef TRAVIS
-	$(COVERAGE) html --directory htmlcov --fail-under=$(COMBINED_TEST_COVERAGE)
+	$(COVERAGE) report --show-missing --fail-under=$(COMBINED_TEST_COVERAGE)
 endif
 
 .PHONY: read-coverage
