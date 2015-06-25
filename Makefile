@@ -9,7 +9,7 @@ PYTHON_MAJOR ?= 2
 PYTHON_MINOR ?= 7
 
 # Test settings
-UNIT_TEST_COVERAGE := 94
+UNIT_TEST_COVERAGE := 88
 INTEGRATION_TEST_COVERAGE := 47
 COMBINED_TEST_COVERAGE := 100
 
@@ -181,6 +181,8 @@ fix: depends-dev
 
 # Testing ######################################################################
 
+TIMESTAMP := $(shell date +%s)
+
 NOSE_OPTS := --with-doctest --with-cov --cov=$(PACKAGE) --cov-report=html
 
 .PHONY: test-unit
@@ -213,7 +215,8 @@ read-coverage:
 	$(OPEN) htmlcov/index.html
 
 .PHONY: watch
-watch: depends-dev
+watch: depends-dev .clean-test
+	@ rm -rf $(FAILED)
 	$(SNIFFER)
 
 # Cleanup ######################################################################
