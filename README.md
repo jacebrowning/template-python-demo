@@ -1,5 +1,5 @@
-PythonTemplateDemo
-======
+# PythonTemplateDemo
+
 A sample project templated from jacebrowning/template-python.
 
 [![Build Status](http://img.shields.io/travis/jacebrowning/template-python-demo/master.svg)](https://travis-ci.org/jacebrowning/template-python-demo)
@@ -8,17 +8,13 @@ A sample project templated from jacebrowning/template-python.
 [![PyPI Version](http://img.shields.io/pypi/v/PythonTemplateDemo.svg)](https://pypi.python.org/pypi/PythonTemplateDemo)
 [![PyPI Downloads](http://img.shields.io/pypi/dm/PythonTemplateDemo.svg)](https://pypi.python.org/pypi/PythonTemplateDemo)
 
+# Getting Started
 
-Getting Started
-===============
-
-Requirements
-------------
+## Requirements
 
 * Python 2.7+
 
-Installation
-------------
+## Installation
 
 PythonTemplateDemo can be installed with pip:
 
@@ -34,8 +30,7 @@ $ cd template-python-demo
 $ python setup.py install
 ```
 
-Basic Usage
-===========
+# Basic Usage
 
 After installation, the package can imported:
 
