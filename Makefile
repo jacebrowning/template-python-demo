@@ -101,7 +101,7 @@ $(INSTALLED_FLAG): Makefile setup.py requirements.txt
 .venv: $(PIP)
 $(PIP):
 	$(SYS_PYTHON) -m venv --clear $(ENV)
-	$(PYTHON) -m ensurepip && $(PIP) install --upgrade pip
+	$(PIP) install --upgrade pip
 
 .PHONY: depends
 depends: depends-ci depends-dev
