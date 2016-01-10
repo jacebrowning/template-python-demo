@@ -48,11 +48,7 @@ endif
 
 # Virtual environment executables
 PYTHON := $(BIN)/python
-ifdef TRAVIS
-	PIP := pip
-else
-	PIP := $(BIN)/pip
-endif
+PIP := $(BIN)/pip
 EASY_INSTALL := $(BIN)/easy_install
 RST2HTML := $(PYTHON) $(BIN)/rst2html.py
 PDOC := $(PYTHON) $(BIN)/pdoc
