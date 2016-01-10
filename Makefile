@@ -4,8 +4,10 @@ PACKAGE := demo
 SOURCES := Makefile setup.py $(shell find $(PACKAGE) -name '*.py')
 
 # Python settings
-PYTHON_MAJOR ?= 2
-PYTHON_MINOR ?= 7
+ifndef TRAVIS
+	PYTHON_MAJOR ?= 2
+	PYTHON_MINOR ?= 7
+endif
 
 # Test settings
 UNIT_TEST_COVERAGE := 88
