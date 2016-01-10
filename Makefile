@@ -2,11 +2,10 @@
 PROJECT := PythonTemplateDemo
 PACKAGE := demo
 SOURCES := Makefile setup.py $(shell find $(PACKAGE) -name '*.py')
-EGG_INFO := $(subst -,_,$(PROJECT)).egg-info
 
 # Python settings
-PYTHON_MAJOR ?= 2
-PYTHON_MINOR ?= 7
+PYTHON_MAJOR ?= 3
+PYTHON_MINOR ?= 5
 
 # Test settings
 UNIT_TEST_COVERAGE := 88
@@ -19,7 +18,6 @@ ifneq ($(findstring win32, $(PLATFORM)), )
 	WINDOWS := 1
 	SYS_PYTHON_DIR := C:\\Python$(PYTHON_MAJOR)$(PYTHON_MINOR)
 	SYS_PYTHON := $(SYS_PYTHON_DIR)\\python.exe
-	SYS_VIRTUALENV := $(SYS_PYTHON_DIR)\\Scripts\\virtualenv.exe
 	# https://bugs.launchpad.net/virtualenv/+bug/449537
 	export TCL_LIBRARY=$(SYS_PYTHON_DIR)\\tcl\\tcl8.5
 else
@@ -32,10 +30,9 @@ else
 	ifdef PYTHON_MINOR
 		SYS_PYTHON := $(SYS_PYTHON).$(PYTHON_MINOR)
 	endif
-	SYS_VIRTUALENV := virtualenv
 endif
 
-# virtualenv paths
+# Virtual environment paths
 ENV := env
 ifneq ($(findstring win32, $(PLATFORM)), )
 	BIN := $(ENV)/Scripts
@@ -49,7 +46,7 @@ else
 	endif
 endif
 
-# virtualenv executables
+# Virtual environment executables
 PYTHON := $(BIN)/python
 PIP := $(BIN)/pip
 EASY_INSTALL := $(BIN)/easy_install
@@ -66,6 +63,7 @@ COVERAGE := $(BIN)/coverage
 SNIFFER := $(BIN)/sniffer
 
 # Flags for PHONY targets
+INSTALLED_FLAG := $(ENV)/.installed
 DEPENDS_CI_FLAG := $(ENV)/.depends-ci
 DEPENDS_DEV_FLAG := $(ENV)/.depends-dev
 DOCS_FLAG := $(ENV)/.docs
@@ -80,20 +78,29 @@ $(ALL_FLAG): $(SOURCES)
 	touch $(ALL_FLAG)  # flag to indicate all setup steps were successful
 
 .PHONY: ci
+ifdef TRAVIS
 ci: check test tests
+else
+ci: doc check test tests
+endif
+
+.PHONY: watch
+watch: depends-dev .clean-test
+	@ rm -rf $(FAILED_FLAG)
+	$(SNIFFER)
 
 # Development Installation #####################################################
 
 .PHONY: env
-env: .virtualenv $(EGG_INFO)
-$(EGG_INFO): Makefile setup.py requirements.txt
+env: .venv $(INSTALLED_FLAG)
+$(INSTALLED_FLAG): Makefile setup.py requirements.txt
 	VIRTUAL_ENV=$(ENV) $(PYTHON) setup.py develop
-	@ touch $(EGG_INFO)  # flag to indicate package is installed
+	@ touch $(INSTALLED_FLAG)  # flag to indicate package is installed
 
-.PHONY: .virtualenv
-.virtualenv: $(PIP)
+.PHONY: .venv
+.venv: $(PIP)
 $(PIP):
-	$(SYS_VIRTUALENV) --python $(SYS_PYTHON) $(ENV)
+	$(SYS_PYTHON) -m venv $(ENV)
 	$(PIP) install --upgrade pip
 
 .PHONY: depends
@@ -102,7 +109,7 @@ depends: depends-ci depends-dev
 .PHONY: depends-ci
 depends-ci: env Makefile $(DEPENDS_CI_FLAG)
 $(DEPENDS_CI_FLAG): Makefile
-	$(PIP) install --upgrade pep8 pep257 pylint coverage nose nose-cov
+	$(PIP) install --upgrade pep8 pep257 pylint coverage nose nose-cov expecter
 	@ touch $(DEPENDS_CI_FLAG)  # flag to indicate dependencies are installed
 
 .PHONY: depends-dev
@@ -112,7 +119,7 @@ $(DEPENDS_DEV_FLAG): Makefile
 ifdef WINDOWS
 	$(PIP) install --upgrade pywin32
 else ifdef MAC
-	$(PIP) install --upgrade pync MacFSEvents
+	$(PIP) install --upgrade pync MacFSEvents==0.4
 else ifdef LINUX
 	$(PIP) install --upgrade pyinotify
 endif
@@ -163,18 +170,19 @@ check: pep8 pep257 pylint
 
 .PHONY: pep8
 pep8: depends-ci
-	$(PEP8) $(PACKAGE) --config=.pep8rc
+	$(PEP8) $(PACKAGE) tests --config=.pep8rc
 
 .PHONY: pep257
 pep257: depends-ci
-# D102: docstring missing (checked by PyLint)
-# D202: No blank lines allowed *after* function docstring (personal preference)
-# D203: 1 blank line required before class (deprecated warning)
-	$(PEP257) $(PACKAGE) --ignore=D102,D202,D203
+	$(PEP257) $(PACKAGE) tests
 
 .PHONY: pylint
 pylint: depends-ci
-	$(PYLINT) $(PACKAGE) --rcfile=.pylintrc
+# These warnings shouldn't fail builds, but warn in editors:
+# C0111: Line too long
+# R0913: Too many arguments
+# R0914: Too many local variables
+	$(PYLINT) $(PACKAGE) tests --rcfile=.pylintrc --disable=C0111,R0913,R0914
 
 .PHONY: fix
 fix: depends-dev
@@ -182,7 +190,7 @@ fix: depends-dev
 
 # Testing ######################################################################
 
-TIMESTAMP := $(shell date +%s)
+RANDOM_SEED ?= $(shell date +%s)
 
 NOSE_OPTS := --with-doctest --with-cov --cov=$(PACKAGE) --cov-report=html
 
@@ -215,29 +223,20 @@ endif
 read-coverage:
 	$(OPEN) htmlcov/index.html
 
-.PHONY: watch
-watch: depends-dev .clean-test
-	@ rm -rf $(FAILED)
-	$(SNIFFER)
-
 # Cleanup ######################################################################
 
 .PHONY: clean
 clean: .clean-dist .clean-test .clean-doc .clean-build
-	rm -rf $(ALL)
-
-.PHONY: clean-env
-clean-env: clean
-	rm -rf $(ENV)
+	rm -rf $(ALL_FLAG)
 
 .PHONY: clean-all
-clean-all: clean clean-env .clean-workspace
+clean-all: clean .clean-env .clean-workspace
 
 .PHONY: .clean-build
 .clean-build:
 	find $(PACKAGE) -name '*.pyc' -delete
 	find $(PACKAGE) -name '__pycache__' -delete
-	rm -rf $(EGG_INFO)
+	rm -rf $(INSTALLED_FLAG)
 
 .PHONY: .clean-doc
 .clean-doc:
@@ -251,6 +250,10 @@ clean-all: clean clean-env .clean-workspace
 .clean-dist:
 	rm -rf dist build
 
+.PHONY: .clean-env
+.clean-env: clean
+	rm -rf $(ENV)
+
 .PHONY: .clean-workspace
 .clean-workspace:
 	rm -rf *.sublime-workspace
@@ -262,7 +265,7 @@ register-test: doc
 	$(PYTHON) setup.py register --strict --repository https://testpypi.python.org/pypi
 
 .PHONY: upload-test
-upload-test: .git-no-changes register-test
+upload-test: register-test
 	$(PYTHON) setup.py sdist upload --repository https://testpypi.python.org/pypi
 	$(PYTHON) setup.py bdist_wheel upload --repository https://testpypi.python.org/pypi
 	$(OPEN) https://testpypi.python.org/pypi/$(PROJECT)
@@ -279,7 +282,7 @@ upload: .git-no-changes register
 
 .PHONY: .git-no-changes
 .git-no-changes:
-	@if git diff --name-only --exit-code;         \
+	@ if git diff --name-only --exit-code;        \
 	then                                          \
 		echo Git working copy is clean...;        \
 	else                                          \
