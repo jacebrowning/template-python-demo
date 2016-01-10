@@ -100,7 +100,7 @@ $(INSTALLED_FLAG): Makefile setup.py requirements.txt
 .PHONY: .venv
 .venv: $(PIP)
 $(PIP):
-	$(SYS_PYTHON) -m venv $(ENV)
+	$(SYS_PYTHON) -m venv --clear $(ENV)
 	$(PIP) install --upgrade pip
 
 .PHONY: depends
