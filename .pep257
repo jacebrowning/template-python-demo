@@ -1,0 +1,4 @@
+[pep257]
+
+# D202: No blank lines allowed *after* function docstring (personal preference)
+add-ignore = D202
