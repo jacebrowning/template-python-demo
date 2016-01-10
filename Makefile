@@ -47,9 +47,12 @@ else
 endif
 
 # Virtual environment executables
-ACTIVATE := source $(BIN)/activate
 PYTHON := $(BIN)/python
-PIP := $(ACTIVATE) && pip
+ifdef TRAVIS
+	PIP := pip
+else
+	PIP := $(BIN)/pip
+endif
 EASY_INSTALL := $(BIN)/easy_install
 RST2HTML := $(PYTHON) $(BIN)/rst2html.py
 PDOC := $(PYTHON) $(BIN)/pdoc
