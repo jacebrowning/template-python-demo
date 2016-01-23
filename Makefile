@@ -51,20 +51,23 @@ else
 endif
 
 # Virtual environment executables
-PYTHON := $(ACTIVATE) && python
-PIP := $(ACTIVATE) && pip
-EASY_INSTALL := $(ACTIVATE) && easy_install
-RST2HTML := $(ACTIVATE) python rst2html.py
-PDOC := $(ACTIVATE) python pdoc
-PEP8 := $(ACTIVATE) && pep8
-PEP8RADIUS := $(ACTIVATE) && pep8radius
-PEP257 := $(ACTIVATE) && pep257
-PYLINT := $(ACTIVATE) && pylint
-PYREVERSE := $(ACTIVATE) && pyreverse
-NOSE := $(ACTIVATE) && nosetests
-PYTEST := $(ACTIVATE) && py.test
-COVERAGE := $(ACTIVATE) && coverage
-SNIFFER := $(ACTIVATE) && sniffer
+ifndef TRAVIS
+	BIN_ := $(BIN)/
+endif
+PYTHON := $(BIN_)python
+PIP := $(BIN_)pip
+EASY_INSTALL := $(BIN_)easy_install
+RST2HTML := $(PYTHON) $(BIN_)rst2html.py
+PDOC := $(PYTHON) $(BIN_)pdoc
+PEP8 := $(BIN_)pep8
+PEP8RADIUS := $(BIN_)pep8radius
+PEP257 := $(BIN_)pep257
+PYLINT := $(BIN_)pylint
+PYREVERSE := $(BIN_)pyreverse
+NOSE := $(BIN_)nosetests
+PYTEST := $(BIN_)py.test
+COVERAGE := $(BIN_)coverage
+SNIFFER := $(BIN_)sniffer
 
 # Flags for PHONY targets
 INSTALLED_FLAG := $(ENV)/.installed
@@ -96,16 +99,16 @@ watch: depends-dev .clean-test
 # Development Installation #####################################################
 
 .PHONY: env
-env: .venv $(INSTALLED_FLAG)
+env: $(PIP) $(INSTALLED_FLAG)
 $(INSTALLED_FLAG): Makefile setup.py requirements.txt
 	VIRTUAL_ENV=$(ENV) $(PYTHON) setup.py develop
 	@ touch $(INSTALLED_FLAG)  # flag to indicate package is installed
 
-.PHONY: .venv
-.venv: $(PIP)
 $(PIP):
 	$(SYS_PYTHON) -m venv --clear $(ENV)
 	$(PIP) install --upgrade pip
+
+# Tools Installation ###########################################################
 
 .PHONY: depends
 depends: depends-ci depends-dev
@@ -307,4 +310,4 @@ install:
 
 .PHONY: download
 download:
-	pip install $(PROJECT)
+	$(SYS_PYTHON) -m pip install $(PROJECT)
