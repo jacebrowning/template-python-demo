@@ -18,7 +18,7 @@ setuptools.setup(
     name=__project__,
     version=__version__,
 
-    description="PythonTemplateDemo is a Python package template.",
+    description="A sample project templated from jacebrowning/template-python.",
     url='https://github.com/jacebrowning/template-python-demo',
     author='Jace Browning',
     author_email='jacebrowning@gmail.com',
