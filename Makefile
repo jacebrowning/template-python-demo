@@ -145,8 +145,6 @@ endif
 
 # Documentation ################################################################
 
-URL := jacebrowning.github.io/template-python-demo
-
 .PHONY: doc
 doc: readme verify-readme uml apidocs mkdocs
 
@@ -193,7 +191,6 @@ apidocs/$(PACKAGE)/index.html: $(SOURCES)
 mkdocs: depends-doc site/index.html
 site/index.html: mkdocs.yml docs/*.md
 	$(MKDOCS) build --clean --strict
-	echo $(URL) > site/CNAME
 
 # Static Analysis ##############################################################
 
