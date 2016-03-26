@@ -121,7 +121,7 @@ depends: depends-ci depends-doc depends-dev
 .PHONY: depends-ci
 depends-ci: env Makefile $(DEPENDS_CI_FLAG)
 $(DEPENDS_CI_FLAG): Makefile
-	$(PIP) install --upgrade pep8 pep257 pylint coverage pytest pytest-describe pytest-expecter pytest-cov pytest-random pytest-runfailed
+	$(PIP) install --upgrade pep8 pep257 pylint coverage pytest pytest-describe pytest-expecter pytest-cov pytest-random
 	@ touch $(DEPENDS_CI_FLAG)  # flag to indicate dependencies are installed
 
 .PHONY: depends-doc
@@ -224,32 +224,32 @@ PYTEST_RANDOM_OPTS := --random --random-seed=$(RANDOM_SEED)
 PYTEST_OPTS := $(PYTEST_CORE_OPTS) $(PYTEST_COV_OPTS) $(PYTEST_RANDOM_OPTS)
 PYTEST_OPTS_FAILFAST := $(PYTEST_OPTS) --failed --exitfirst
 
-FAILED_FLAG := .pytest/failed
+FAILURES := .cache/v/cache/lastfailed
 
 .PHONY: test test-unit
 test: test-unit
 test-unit: depends-ci
+	@- mv $(FAILURES) $(FAILURES).bak
 	$(PYTEST) $(PYTEST_OPTS) $(PACKAGE)
+	@- mv $(FAILURES).bak $(FAILURES)
 ifndef TRAVIS
 	$(COVERAGE) html --directory htmlcov --fail-under=$(UNIT_TEST_COVERAGE)
 endif
 
 .PHONY: test-int
 test-int: depends-ci
-	@ if test -e $(FAILED_FLAG); then $(MAKE) test-all; fi
-	$(PYTEST) $(PYTEST_OPTS_FAILFAST) tests
+	@ if test -e $(FAILURES); then $(PYTEST) $(PYTEST_OPTS_FAILFAST) tests; fi
+	$(PYTEST) $(PYTEST_OPTS) tests
 ifndef TRAVIS
-	@ rm -rf $(FAILED_FLAG)  # next time, don't run the previously failing test
 	$(COVERAGE) html --directory htmlcov --fail-under=$(INTEGRATION_TEST_COVERAGE)
 endif
 
 .PHONY: tests test-all
 tests: test-all
 test-all: depends-ci
-	@ if test -e $(FAILED_FLAG); then $(PYTEST) --failed $(PACKAGE) tests; fi
-	$(PYTEST) $(PYTEST_OPTS_FAILFAST) $(PACKAGE) tests
+	@ if test -e $(FAILURES); then $(PYTEST) $(PYTEST_OPTS_FAILFAST) $(PACKAGE) tests; fi
+	$(PYTEST) $(PYTEST_OPTS) $(PACKAGE) tests
 ifndef TRAVIS
-	@ rm -rf $(FAILED_FLAG)  # next time, don't run the previously failing test
 	$(COVERAGE) html --directory htmlcov --fail-under=$(COMBINED_TEST_COVERAGE)
 endif
 
@@ -278,7 +278,7 @@ clean-all: clean .clean-env .clean-workspace
 
 .PHONY: .clean-test
 .clean-test:
-	rm -rf .pytest .coverage htmlcov
+	rm -rf .cache .pytest .coverage htmlcov
 
 .PHONY: .clean-dist
 .clean-dist:
