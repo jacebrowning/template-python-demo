@@ -265,7 +265,7 @@ clean-all: clean .clean-env .clean-workspace
 
 .PHONY: .clean-doc
 .clean-doc:
-	rm -rf README.rst apidocs *.html docs/*.png
+	rm -rf README.rst apidocs *.html docs/*.png site
 
 .PHONY: .clean-test
 .clean-test:
