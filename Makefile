@@ -9,11 +9,6 @@ ifndef TRAVIS
 	PYTHON_MINOR ?= 7
 endif
 
-# Test settings
-UNIT_TEST_COVERAGE := 88
-INTEGRATION_TEST_COVERAGE := 47
-COMBINED_TEST_COVERAGE := 100
-
 # System paths
 PLATFORM := $(shell python -c 'import sys; print(sys.platform)')
 ifneq ($(findstring win32, $(PLATFORM)), )
@@ -70,6 +65,7 @@ PYREVERSE := $(BIN_)pyreverse
 NOSE := $(BIN_)nosetests
 PYTEST := $(BIN_)py.test
 COVERAGE := $(BIN_)coverage
+COVERAGE_SPACE := $(BIN_)coverage.space
 SNIFFER := $(BIN_)sniffer
 HONCHO := $(ACTIVATE) && honcho
 
@@ -121,7 +117,7 @@ depends: depends-ci depends-doc depends-dev
 .PHONY: depends-ci
 depends-ci: env Makefile $(DEPENDS_CI_FLAG)
 $(DEPENDS_CI_FLAG): Makefile
-	$(PIP) install --upgrade pep8 pep257 pylint coverage nose nose-cov expecter
+	$(PIP) install --upgrade pep8 pep257 pylint coverage coverage.space nose nose-cov expecter
 	@ touch $(DEPENDS_CI_FLAG)  # flag to indicate dependencies are installed
 
 .PHONY: depends-doc
