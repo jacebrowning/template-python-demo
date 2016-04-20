@@ -82,7 +82,7 @@ ALL_FLAG := $(ENV)/.all
 .PHONY: all
 all: depends doc $(ALL_FLAG)
 $(ALL_FLAG): $(SOURCES)
-	$(MAKE) check
+	make check
 	touch $(ALL_FLAG)  # flag to indicate all setup steps were successful
 
 .PHONY: ci
