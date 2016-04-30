@@ -5,23 +5,25 @@ SOURCES := Makefile setup.py $(shell find $(PACKAGE) -name '*.py')
 
 # Python settings
 ifndef TRAVIS
+ifndef APPVEYOR
 	PYTHON_MAJOR ?= 3
 	PYTHON_MINOR ?= 5
+endif
 endif
 
 # System paths
 PLATFORM := $(shell python -c 'import sys; print(sys.platform)')
 ifneq ($(findstring win32, $(PLATFORM)), )
-	WINDOWS := 1
+	WINDOWS := true
 	SYS_PYTHON_DIR := C:\\Python$(PYTHON_MAJOR)$(PYTHON_MINOR)
 	SYS_PYTHON := $(SYS_PYTHON_DIR)\\python.exe
 	# https://bugs.launchpad.net/virtualenv/+bug/449537
 	export TCL_LIBRARY=$(SYS_PYTHON_DIR)\\tcl\\tcl8.5
 else
 	ifneq ($(findstring darwin, $(PLATFORM)), )
-		MAC := 1
+		MAC := true
 	else
-		LINUX := 1
+		LINUX := true
 	endif
 	SYS_PYTHON := python$(PYTHON_MAJOR)
 	ifdef PYTHON_MINOR
@@ -84,11 +86,7 @@ $(ALL_FLAG): $(SOURCES)
 	touch $(ALL_FLAG)  # flag to indicate all setup steps were successful
 
 .PHONY: ci
-ifdef TRAVIS
 ci: check test tests
-else
-ci: doc check test tests
-endif
 
 .PHONY: watch
 watch: depends .clean-test
@@ -105,7 +103,9 @@ $(INSTALLED_FLAG): Makefile setup.py requirements.txt
 
 $(PIP):
 	$(SYS_PYTHON) -m venv --clear $(ENV)
+ifndef WINDOWS
 	$(PIP) install --upgrade pip setuptools
+endif
 
 # Tools Installation ###########################################################
 
@@ -219,14 +219,18 @@ test-unit: test
 test: depends-ci .clean-test
 	$(NOSE) $(PACKAGE) $(NOSE_OPTS)
 ifndef TRAVIS
+ifndef APPVEYOR
 	$(COVERAGE) report --show-missing --fail-under=$(UNIT_TEST_COVERAGE)
+endif
 endif
 
 .PHONY: test-int
 test-int: depends-ci .clean-test
 	$(NOSE) tests $(NOSE_OPTS)
 ifndef TRAVIS
+ifndef APPVEYOR
 	$(COVERAGE) report --show-missing --fail-under=$(INTEGRATION_TEST_COVERAGE)
+endif
 endif
 
 .PHONY: test-all
@@ -235,7 +239,9 @@ test-all: tests
 tests: depends-ci .clean-test
 	$(NOSE) $(PACKAGE) tests $(NOSE_OPTS) -xv
 ifndef TRAVIS
+ifndef APPVEYOR
 	$(COVERAGE) report --show-missing --fail-under=$(COMBINED_TEST_COVERAGE)
+endif
 endif
 
 .PHONY: read-coverage
