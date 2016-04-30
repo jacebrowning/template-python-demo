@@ -5,23 +5,25 @@ SOURCES := Makefile setup.py $(shell find $(PACKAGE) -name '*.py')
 
 # Python settings
 ifndef TRAVIS
+ifndef APPVEYOR
 	PYTHON_MAJOR ?= 3
 	PYTHON_MINOR ?= 5
+endif
 endif
 
 # System paths
 PLATFORM := $(shell python -c 'import sys; print(sys.platform)')
 ifneq ($(findstring win32, $(PLATFORM)), )
-	WINDOWS := 1
+	WINDOWS := true
 	SYS_PYTHON_DIR := C:\\Python$(PYTHON_MAJOR)$(PYTHON_MINOR)
 	SYS_PYTHON := $(SYS_PYTHON_DIR)\\python.exe
 	# https://bugs.launchpad.net/virtualenv/+bug/449537
 	export TCL_LIBRARY=$(SYS_PYTHON_DIR)\\tcl\\tcl8.5
 else
 	ifneq ($(findstring darwin, $(PLATFORM)), )
-		MAC := 1
+		MAC := true
 	else
-		LINUX := 1
+		LINUX := true
 	endif
 	SYS_PYTHON := python$(PYTHON_MAJOR)
 	ifdef PYTHON_MINOR
@@ -84,11 +86,7 @@ $(ALL_FLAG): $(SOURCES)
 	touch $(ALL_FLAG)  # flag to indicate all setup steps were successful
 
 .PHONY: ci
-ifdef TRAVIS
 ci: check test tests
-else
-ci: doc check test tests
-endif
 
 .PHONY: watch
 watch: depends .clean-test
@@ -105,7 +103,9 @@ $(INSTALLED_FLAG): Makefile setup.py requirements.txt
 
 $(PIP):
 	$(SYS_PYTHON) -m venv --clear $(ENV)
+ifndef WINDOWS
 	$(PIP) install --upgrade pip setuptools
+endif
 
 # Tools Installation ###########################################################
 
@@ -227,7 +227,9 @@ test-unit: depends-ci
 	$(PYTEST) $(PYTEST_OPTS) $(PACKAGE)
 	@- mv $(FAILURES).bak $(FAILURES)
 ifndef TRAVIS
+ifndef APPVEYOR
 	$(COVERAGE_SPACE) jacebrowning/template-python-demo unit
+endif
 endif
 
 .PHONY: test-int
@@ -235,7 +237,9 @@ test-int: depends-ci
 	@ if test -e $(FAILURES); then $(PYTEST) $(PYTEST_OPTS_FAILFAST) tests; fi
 	$(PYTEST) $(PYTEST_OPTS) tests
 ifndef TRAVIS
+ifndef APPVEYOR
 	$(COVERAGE_SPACE) jacebrowning/template-python-demo integration
+endif
 endif
 
 .PHONY: tests test-all
@@ -244,7 +248,9 @@ test-all: depends-ci
 	@ if test -e $(FAILURES); then $(PYTEST) $(PYTEST_OPTS_FAILFAST) $(PACKAGE) tests; fi
 	$(PYTEST) $(PYTEST_OPTS) $(PACKAGE) tests
 ifndef TRAVIS
+ifndef APPVEYOR
 	$(COVERAGE_SPACE) jacebrowning/template-python-demo overall
+endif
 endif
 
 .PHONY: read-coverage
