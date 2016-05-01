@@ -105,9 +105,8 @@ $(INSTALLED_FLAG): Makefile setup.py requirements.txt
 
 $(PIP):
 	$(SYS_VIRTUALENV) --python $(SYS_PYTHON) $(ENV)
-ifndef WINDOWS
-	$(PIP) install --upgrade pip setuptools
-endif
+	$(PYTHON) -m pip install --upgrade pip setuptools
+
 
 # Tools Installation ###########################################################
 
