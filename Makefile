@@ -83,7 +83,7 @@ ALL_FLAG := $(ENV)/.all
 all: depends doc $(ALL_FLAG)
 $(ALL_FLAG): $(SOURCES)
 	make check
-	touch $(ALL_FLAG)  # flag to indicate all setup steps were successful
+	@ touch $@  # flag to indicate all setup steps were successful
 
 .PHONY: ci
 ci: check test tests
@@ -99,7 +99,7 @@ watch: depends .clean-test
 env: $(PIP) $(INSTALLED_FLAG)
 $(INSTALLED_FLAG): Makefile setup.py requirements.txt
 	VIRTUAL_ENV=$(ENV) $(PYTHON) setup.py develop
-	@ touch $(INSTALLED_FLAG)  # flag to indicate package is installed
+	@ touch $@  # flag to indicate package is installed
 
 $(PIP):
 	$(SYS_PYTHON) -m venv --clear $(ENV)
@@ -115,13 +115,13 @@ depends: depends-ci depends-doc depends-dev
 depends-ci: env Makefile $(DEPENDS_CI_FLAG)
 $(DEPENDS_CI_FLAG): Makefile
 	$(PIP) install --upgrade pep8 pep257 pylint coverage coverage.space pytest pytest-describe pytest-expecter pytest-cov pytest-random
-	@ touch $(DEPENDS_CI_FLAG)  # flag to indicate dependencies are installed
+	@ touch $@  # flag to indicate dependencies are installed
 
 .PHONY: depends-doc
 depends-doc: env Makefile $(DEPENDS_DOC_FLAG)
 $(DEPENDS_DOC_FLAG): Makefile
 	$(PIP) install --upgrade pylint docutils readme pdoc mkdocs pygments
-	@ touch $(DEPENDS_DOC_FLAG)  # flag to indicate dependencies are installed
+	@ touch $@  # flag to indicate dependencies are installed
 
 .PHONY: depends-dev
 depends-dev: env Makefile $(DEPENDS_DEV_FLAG)
@@ -134,7 +134,7 @@ else ifdef MAC
 else ifdef LINUX
 	$(PIP) install --upgrade pyinotify
 endif
-	@ touch $(DEPENDS_DEV_FLAG)  # flag to indicate dependencies are installed
+	@ touch $@  # flag to indicate dependencies are installed
 
 # Documentation ################################################################
 
@@ -166,7 +166,7 @@ README-pypi.html: README.rst
 verify-readme: $(DOCS_FLAG)
 $(DOCS_FLAG): README.rst CHANGELOG.rst
 	$(PYTHON) setup.py check --restructuredtext --strict --metadata
-	@ touch $(DOCS_FLAG)  # flag to indicate README has been checked
+	@ touch $@  # flag to indicate README has been checked
 
 .PHONY: uml
 uml: depends-doc docs/*.png
