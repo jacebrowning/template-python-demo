@@ -86,7 +86,7 @@ $(ALL_FLAG): $(SOURCES)
 	@ touch $@  # flag to indicate all setup steps were successful
 
 .PHONY: ci
-ci: check test tests
+ci: check test
 
 .PHONY: watch
 watch: depends .clean-test
@@ -219,8 +219,10 @@ PYTEST_OPTS_FAILFAST := $(PYTEST_OPTS) --last-failed --exitfirst
 
 FAILURES := .cache/v/cache/lastfailed
 
-.PHONY: test test-unit
-test: test-unit
+.PHONY: test
+test: test-all
+
+.PHONY: test-unit
 test-unit: depends-ci
 	@- mv $(FAILURES) $(FAILURES).bak
 	$(PYTEST) $(PYTEST_OPTS) $(PACKAGE)
@@ -241,8 +243,7 @@ ifndef APPVEYOR
 endif
 endif
 
-.PHONY: tests test-all
-tests: test-all
+.PHONY: test-all
 test-all: depends-ci
 	@ if test -e $(FAILURES); then $(PYTEST) $(PYTEST_OPTS_FAILFAST) $(PACKAGE) tests; fi
 	$(PYTEST) $(PYTEST_OPTS) $(PACKAGE) tests
