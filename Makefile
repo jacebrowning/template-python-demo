@@ -1,6 +1,7 @@
 # Project settings
 PROJECT := PythonTemplateDemo
 PACKAGE := demo
+REPOSITORY := jacebrowning/template-python-demo
 SOURCES := Makefile setup.py $(shell find $(PACKAGE) -name '*.py')
 
 # Python settings
