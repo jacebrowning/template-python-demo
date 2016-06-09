@@ -12,7 +12,7 @@ Unix: [![Unix Build Status](http://img.shields.io/travis/jacebrowning/template-p
 
 ### Installation
 
-PythonTemplateDemo can be installed with pip:
+Install PythonTemplateDemo with pip:
 
 ```
 $ pip install PythonTemplateDemo
