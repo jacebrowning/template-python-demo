@@ -2,7 +2,8 @@
 PROJECT := PythonTemplateDemo
 PACKAGE := demo
 REPOSITORY := jacebrowning/template-python-demo
-SOURCES := Makefile setup.py $(shell find $(PACKAGE) -name '*.py')
+DIRECTORIES := $(PACKAGE) tests
+FILES := Makefile setup.py $(shell find $(DIRECTORIES) -name '*.py')
 
 # Python settings
 ifndef TRAVIS
@@ -83,7 +84,7 @@ ALL_FLAG := $(ENV)/.all
 
 .PHONY: all
 all: depends doc $(ALL_FLAG)
-$(ALL_FLAG): $(SOURCES)
+$(ALL_FLAG): $(FILES)
 	make check
 	@ touch $@  # flag to indicate all setup steps were successful
 
@@ -145,14 +146,14 @@ doc: uml pdoc mkdocs ## Run all documentation targets
 
 .PHONY: uml
 uml: depends-doc docs/*.png ## Generate UML diagrams for classes and packages
-docs/*.png: $(SOURCES)
+docs/*.png: $(FILES)
 	$(PYREVERSE) $(PACKAGE) -p $(PACKAGE) -a 1 -f ALL -o png --ignore tests
 	- mv -f classes_$(PACKAGE).png docs/classes.png
 	- mv -f packages_$(PACKAGE).png docs/packages.png
 
 .PHONY: pdoc
 pdoc: depends-doc pdoc/$(PACKAGE)/index.html  ## Generate API documentaiton from the code
-pdoc/$(PACKAGE)/index.html: $(SOURCES)
+pdoc/$(PACKAGE)/index.html: $(FILES)
 	$(PDOC) --html --overwrite $(PACKAGE) --html-dir docs/apidocs
 
 .PHONY: mkdocs
@@ -172,15 +173,15 @@ check: pep8 pep257 pylint ## Run all static analysis targets
 
 .PHONY: pep8
 pep8: depends-ci ## Check for convention issues
-	$(PEP8) $(PACKAGE) tests --config=.pep8rc
+	$(PEP8) $(DIRECTORIES) --config=.pep8rc
 
 .PHONY: pep257
 pep257: depends-ci ## Check for docstring issues
-	$(PEP257) $(PACKAGE) tests
+	$(PEP257) $(DIRECTORIES)
 
 .PHONY: pylint
 pylint: depends-ci ## Check for code issues
-	$(PYLINT) $(PACKAGE) tests --rcfile=.pylintrc
+	$(PYLINT) $(DIRECTORIES) --rcfile=.pylintrc
 
 .PHONY: fix
 fix: depends-dev
@@ -215,7 +216,7 @@ endif
 
 .PHONY: test-all
 test-all: depends-ci .clean-test ## Run all the tests
-	$(NOSE) $(PACKAGE) tests $(NOSE_OPTS) -xv
+	$(NOSE) $(DIRECTORIES) $(NOSE_OPTS) -xv
 ifndef TRAVIS
 ifndef APPVEYOR
 	$(COVERAGE) report --show-missing --fail-under=$(COMBINED_TEST_COVERAGE)
@@ -237,8 +238,8 @@ clean-all: clean .clean-env .clean-workspace
 
 .PHONY: .clean-build
 .clean-build:
-	find $(PACKAGE) tests -name '*.pyc' -delete
-	find $(PACKAGE) tests -name '__pycache__' -delete
+	find $(DIRECTORIES) -name '*.pyc' -delete
+	find $(DIRECTORIES) -name '__pycache__' -delete
 	rm -rf $(INSTALLED_FLAG) *.egg-info
 
 .PHONY: .clean-doc
