@@ -7,10 +7,8 @@ FILES := Makefile setup.py $(shell find $(DIRECTORIES) -name '*.py')
 
 # Python settings
 ifndef TRAVIS
-ifndef APPVEYOR
 	PYTHON_MAJOR ?= 2
 	PYTHON_MINOR ?= 7
-endif
 endif
 
 # System paths
