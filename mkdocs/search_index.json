@@ -1,0 +1,94 @@
+{
+    "docs": [
+        {
+            "location": "/",
+            "text": "demo\n\n\nA sample project templated from jacebrowning/template-python.",
+            "title": "Home"
+        },
+        {
+            "location": "/#demo",
+            "text": "A sample project templated from jacebrowning/template-python.",
+            "title": "demo"
+        },
+        {
+            "location": "/about/changelog/",
+            "text": "Revision History\n\n\n0.0.0 (YYYY/MM/DD)\n\n\n\n\nTBD",
+            "title": "Release Notes"
+        },
+        {
+            "location": "/about/changelog/#revision-history",
+            "text": "",
+            "title": "Revision History"
+        },
+        {
+            "location": "/about/changelog/#000-yyyymmdd",
+            "text": "TBD",
+            "title": "0.0.0 (YYYY/MM/DD)"
+        },
+        {
+            "location": "/about/contributing/",
+            "text": "For Contributors\n\n\nSetup\n\n\nRequirements\n\n\n\n\nMake:\n\n\nWindows: http://cygwin.com/install.html\n\n\nMac: https://developer.apple.com/xcode\n\n\nLinux: http://www.gnu.org/software/make (likely already installed)\n\n\n\n\n\n\nvirtualenv: https://pypi.python.org/pypi/virtualenv#installation\n\n\nPandoc: http://johnmacfarlane.net/pandoc/installing.html\n\n\nGraphviz: http://www.graphviz.org/Download.php\n\n\n\n\nInstallation\n\n\nCreate a virtual environment:\n\n\n$ make env\n\n\n\n\nDevelopment Tasks\n\n\nTesting\n\n\nManually run the tests:\n\n\n$ make test\n$ make tests  # includes integration tests\n\n\n\n\nor keep them running on change:\n\n\n$ make watch\n\n\n\n\n\n\nIn order to have OS X notifications, \nbrew install terminal-notifier\n.\n\n\n\n\nDocumentation\n\n\nBuild the documentation:\n\n\n$ make doc\n\n\n\n\nStatic Analysis\n\n\nRun linters and static analyzers:\n\n\n$ make pep8\n$ make pep257\n$ make pylint\n$ make check  # includes all checks\n\n\n\n\nContinuous Integration\n\n\nThe CI server will report overall build status:\n\n\n$ make ci\n\n\n\n\nRelease Tasks\n\n\nRelease to PyPI:\n\n\n$ make upload-test  # dry run upload to a test server\n$ make upload",
+            "title": "Contributing"
+        },
+        {
+            "location": "/about/contributing/#for-contributors",
+            "text": "",
+            "title": "For Contributors"
+        },
+        {
+            "location": "/about/contributing/#setup",
+            "text": "",
+            "title": "Setup"
+        },
+        {
+            "location": "/about/contributing/#requirements",
+            "text": "Make:  Windows: http://cygwin.com/install.html  Mac: https://developer.apple.com/xcode  Linux: http://www.gnu.org/software/make (likely already installed)    virtualenv: https://pypi.python.org/pypi/virtualenv#installation  Pandoc: http://johnmacfarlane.net/pandoc/installing.html  Graphviz: http://www.graphviz.org/Download.php",
+            "title": "Requirements"
+        },
+        {
+            "location": "/about/contributing/#installation",
+            "text": "Create a virtual environment:  $ make env",
+            "title": "Installation"
+        },
+        {
+            "location": "/about/contributing/#development-tasks",
+            "text": "",
+            "title": "Development Tasks"
+        },
+        {
+            "location": "/about/contributing/#testing",
+            "text": "Manually run the tests:  $ make test\n$ make tests  # includes integration tests  or keep them running on change:  $ make watch   In order to have OS X notifications,  brew install terminal-notifier .",
+            "title": "Testing"
+        },
+        {
+            "location": "/about/contributing/#documentation",
+            "text": "Build the documentation:  $ make doc",
+            "title": "Documentation"
+        },
+        {
+            "location": "/about/contributing/#static-analysis",
+            "text": "Run linters and static analyzers:  $ make pep8\n$ make pep257\n$ make pylint\n$ make check  # includes all checks",
+            "title": "Static Analysis"
+        },
+        {
+            "location": "/about/contributing/#continuous-integration",
+            "text": "The CI server will report overall build status:  $ make ci",
+            "title": "Continuous Integration"
+        },
+        {
+            "location": "/about/contributing/#release-tasks",
+            "text": "Release to PyPI:  $ make upload-test  # dry run upload to a test server\n$ make upload",
+            "title": "Release Tasks"
+        },
+        {
+            "location": "/about/license/",
+            "text": "License\n\n\nThe MIT License (MIT)\n\n\nCopyright \u00a9 2016, Jace Browning\n\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\n\nThe above copyright notice and this permission notice shall be included in\nall copies or substantial portions of the Software.\n\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN\nTHE SOFTWARE.",
+            "title": "License"
+        },
+        {
+            "location": "/about/license/#license",
+            "text": "The MIT License (MIT)  Copyright \u00a9 2016, Jace Browning  Permission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:  The above copyright notice and this permission notice shall be included in\nall copies or substantial portions of the Software.  THE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN\nTHE SOFTWARE.",
+            "title": "License"
+        }
+    ]
+}
