@@ -1,0 +1,13 @@
+# Linters
+pep8
+pep257
+pylint
+
+# Testing
+nose
+nose-cov
+expecter
+
+# Coverage
+coverage
+coverage.space
