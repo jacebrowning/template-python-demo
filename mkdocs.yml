@@ -3,11 +3,11 @@ site_description: A sample project templated from jacebrowning/template-python.
 site_author: Jace Browning
 repo_url: https://github.com/jacebrowning/template-python-demo
 
-theme: mkdocs
+theme: readthedocs
 
 pages:
 - Home: index.md
 - About:
-  - 'Release Notes': about/changelog.md
+  - Release Notes: about/changelog.md
   - Contributing: about/contributing.md
   - License: about/license.md
