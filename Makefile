@@ -96,10 +96,8 @@ watch: depends .clean-test ## Continuously run all CI targets when files chanage
 
 .PHONY: doctor
 doctor:  ## Confirm system dependencies are available
-	@ echo "Checking Fizz version:"
-	@ fizz --version | tee /dev/stderr | grep -q "3.5."
-	@ echo "Checking Buzz version:"
-	@ buzz --version | tee /dev/stderr | grep -q "1."
+	@ echo "Checking Python version:"
+	@ python --version | tee /dev/stderr | grep -q "3.5."
 
 # PROJECT DEPENDENCIES #########################################################
 
