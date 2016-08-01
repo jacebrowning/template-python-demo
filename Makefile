@@ -149,7 +149,7 @@ fix: depends
 
 RANDOM_SEED ?= $(shell date +%s)
 
-NOSE_OPTS := --with-doctest --with-cov --cov=$(PACKAGE) --cov-report=html
+NOSE_OPTS := --with-doctest --with-cov --cov=$(PACKAGE) --cov-report=html  --cov-report=term-missing
 
 .PHONY: test
 test: test-all
@@ -159,7 +159,7 @@ test-unit: depends .clean-test ## Run the unit tests
 	$(NOSE) $(PACKAGE) $(NOSE_OPTS)
 ifndef TRAVIS
 ifndef APPVEYOR
-	$(COVERAGE) report --show-missing --fail-under=$(UNIT_TEST_COVERAGE)
+	$(COVERAGE_SPACE) $(REPOSITORY) unit
 endif
 endif
 
@@ -168,16 +168,16 @@ test-int: depends .clean-test ## Run the integration tests
 	$(NOSE) tests $(NOSE_OPTS)
 ifndef TRAVIS
 ifndef APPVEYOR
-	$(COVERAGE) report --show-missing --fail-under=$(INTEGRATION_TEST_COVERAGE)
+	$(COVERAGE_SPACE) $(REPOSITORY) integration
 endif
 endif
 
 .PHONY: test-all
 test-all: depends .clean-test ## Run all the tests
-	$(NOSE) $(DIRECTORIES) $(NOSE_OPTS) -xv
+	$(NOSE) $(DIRECTORIES) $(NOSE_OPTS)
 ifndef TRAVIS
 ifndef APPVEYOR
-	$(COVERAGE) report --show-missing --fail-under=$(COMBINED_TEST_COVERAGE)
+	$(COVERAGE_SPACE) $(REPOSITORY) overall
 endif
 endif
 
