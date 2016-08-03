@@ -1,5 +1,5 @@
 # Project settings
-PROJECT := PythonTemplateDemo
+PROJECT := TemplateDemo
 PACKAGE := demo
 REPOSITORY := jacebrowning/template-python-demo
 DIRECTORIES := $(PACKAGE) tests
