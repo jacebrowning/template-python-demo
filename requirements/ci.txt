@@ -9,7 +9,6 @@ pytest-describe
 pytest-expecter
 pytest-cov
 pytest-random
-expecter
 
 # Coverage
 coverage
