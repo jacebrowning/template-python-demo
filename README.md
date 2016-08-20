@@ -14,13 +14,13 @@ A sample project templated from jacebrowning/template-python.
 
 Install TemplateDemo with pip:
 
-```
+```sh
 $ pip install TemplateDemo
 ```
 
 or directly from the source code:
 
-```
+```sh
 $ git clone https://github.com/jacebrowning/template-python-demo.git
 $ cd template-python-demo
 $ python setup.py install
@@ -30,7 +30,7 @@ $ python setup.py install
 
 After installation, the package can imported:
 
-```
+```sh
 $ python
 >>> import demo
 >>> demo.__version__
