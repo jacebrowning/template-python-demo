@@ -98,7 +98,7 @@ DEPENDS_DEV := $(ENV)/.depends-dev
 env: $(PYTHON)
 
 $(PYTHON):
-	$(SYS_PYTHON) -m venv --clear $(ENV)
+	$(SYS_PYTHON) -m venv $(ENV)
 	$(PYTHON) -m pip install --upgrade pip setuptools
 
 .PHONY: depends
