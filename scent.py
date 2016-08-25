@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 """Configuration file for sniffer."""
+# pylint: disable=superfluous-parens,bad-continuation
 
 import os
 import time
@@ -22,10 +23,10 @@ watch_paths = ["demo", "tests"]
 def python_files(filename):
     """Match Python source files."""
 
-    return all(
-        (filename.endswith('.py'),
-        not os.path.basename(filename).startswith('.')),
-    )
+    return all((
+        filename.endswith('.py'),
+        not os.path.basename(filename).startswith('.'),
+    ))
 
 
 @runnable
