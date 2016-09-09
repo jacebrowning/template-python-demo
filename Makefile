@@ -290,7 +290,7 @@ clean-all: clean .clean-env .clean-workspace
 
 .PHONY: .clean-test
 .clean-test:
-	rm -rf .cache .pytest .coverage htmlcov
+	rm -rf .cache .pytest .coverage htmlcov xmlreport
 
 .PHONY: .clean-dist
 .clean-dist:
