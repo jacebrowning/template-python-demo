@@ -13,10 +13,10 @@
 
 ### Installation
 
-Create a virtual environment:
+Install project dependencies into a virtual environment:
 
 ```sh
-$ make env
+$ make install
 ```
 
 ## Development Tasks
