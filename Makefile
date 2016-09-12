@@ -155,29 +155,17 @@ test: test-all ## Run unit and integration tests
 .PHONY: test-unit
 test-unit: install .clean-test ## Run the unit tests
 	$(NOSE) $(PACKAGE) $(NOSE_OPTS)
-ifndef TRAVIS
-ifndef APPVEYOR
 	$(COVERAGE_SPACE) $(REPOSITORY) unit
-endif
-endif
 
 .PHONY: test-int
 test-int: install .clean-test ## Run the integration tests
 	$(NOSE) tests $(NOSE_OPTS)
-ifndef TRAVIS
-ifndef APPVEYOR
 	$(COVERAGE_SPACE) $(REPOSITORY) integration
-endif
-endif
 
 .PHONY: test-all
 test-all: install .clean-test ## Run all the tests
 	$(NOSE) $(PACKAGES) $(NOSE_OPTS)
-ifndef TRAVIS
-ifndef APPVEYOR
 	$(COVERAGE_SPACE) $(REPOSITORY) overall
-endif
-endif
 
 .PHONY: read-coverage
 read-coverage:
@@ -233,12 +221,14 @@ PYINSTALLER_MAKESPEC := $(BIN_)pyi-makespec
 .PHONY: sdist
 sdist: install dist/*.tar.gz
 dist/*.tar.gz: $(MODULES) README.rst CHANGELOG.rst
+	rm -f dist/*.tar.gz
 	$(PYTHON) setup.py check --restructuredtext --strict --metadata
 	$(PYTHON) setup.py sdist
 
 .PHONY: bdist
 bdist: install dist/*.whl
 dist/*.whl: $(MODULES) README.rst CHANGELOG.rst
+	rm -f dist/*.whle
 	$(PYTHON) setup.py check --restructuredtext --strict --metadata
 	$(PYTHON) setup.py bdist_wheel
 
