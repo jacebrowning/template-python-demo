@@ -10,4 +10,4 @@ expecter
 
 # Coverage
 coverage
-coverage.space
+coverage.space >= 0.6
