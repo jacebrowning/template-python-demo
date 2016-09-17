@@ -52,7 +52,10 @@ setuptools.setup(
 
     packages=setuptools.find_packages(),
 
-    entry_points={'console_scripts': []},
+    entry_points={'console_scripts': [
+        'demo-cli = demo.cli:main',
+        'demo-gui = demo.gui:main',
+    ]},
 
     long_description=read_descriptions(),
     license='MIT',
