@@ -107,6 +107,7 @@ $(DEPS_BASE): setup.py requirements.txt $(PYTHON)
 
 $(PIP): $(PYTHON)
 	$(PYTHON) -m pip install --upgrade pip setuptools
+	@ touch $@
 
 $(PYTHON):
 	$(SYS_PYTHON) -m venv $(ENV)
