@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-"""Setup script for TemplateDemo."""
+"""Setup script for the package."""
 
 import os
 import sys
