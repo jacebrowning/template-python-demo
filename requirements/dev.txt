@@ -18,4 +18,4 @@ wheel
 pyinstaller
 
 # Release
-twine
+twine==1.8.1
