@@ -11,7 +11,7 @@ pep8radius
 sniffer >= 0.3.6
 
 # Runner
-honcho
+honcho==0.7.1
 
 # Build
 wheel
