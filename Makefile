@@ -78,8 +78,7 @@ run: install
 
 .PHONY: doctor
 doctor:  ## Confirm system dependencies are available
-	@ echo "Checking Python version:"
-	@ python --version | tee /dev/stderr | grep -q "3.5."
+	bin/verchew
 
 # PROJECT DEPENDENCIES #########################################################
 
