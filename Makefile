@@ -113,7 +113,7 @@ $(PIP): $(PYTHON)
 	@ touch $@
 
 $(PYTHON):
-	$(SYS_PYTHON) -m venv $(ENV)
+	$(SYS_PYTHON) -m venv --clear $(ENV)
 
 # CHECKS #######################################################################
 
