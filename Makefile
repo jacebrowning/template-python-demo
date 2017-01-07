@@ -2,9 +2,11 @@
 PROJECT := TemplateDemo
 PACKAGE := demo
 REPOSITORY := jacebrowning/template-python-demo
+
+# Project paths
 PACKAGES := $(PACKAGE) tests
-CONFIG := $(shell ls *.py)
-MODULES := $(shell find $(PACKAGES) -name '*.py') $(CONFIG)
+CONFIG := $(wildcard *.py)
+MODULES := $(wildcard $(PACKAGE)/*.py)
 
 # Python settings
 ifndef TRAVIS
