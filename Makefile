@@ -116,7 +116,7 @@ $(PIP): $(PYTHON)
 	@ touch $@
 
 $(PYTHON):
-	$(SYS_PYTHON) -m venv --clear $(ENV)
+	$(SYS_PYTHON) -m venv $(ENV)
 
 # CHECKS #######################################################################
 
