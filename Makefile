@@ -147,7 +147,7 @@ COVERAGE_SPACE := $(BIN)/coverage.space
 
 RANDOM_SEED ?= $(shell date +%s)
 
-NOSE_OPTS := --with-doctest --with-cov --cov=$(PACKAGE) --cov-report=html  --cov-report=term-missing
+NOSE_OPTS := --with-doctest --with-cov --cov=$(PACKAGE) --cov-report=html  --cov-report=term-missing:skip-covered
 
 .PHONY: test
 test: test-all ## Run unit and integration tests
