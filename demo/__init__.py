@@ -1,5 +1,3 @@
-"""Package for TemplateDemo."""
-
 __project__ = 'TemplateDemo'
 __version__ = '0.0.0'
 
