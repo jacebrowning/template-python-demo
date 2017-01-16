@@ -130,15 +130,15 @@ PYDOCSTYLE := $(BIN)/pydocstyle
 check: pylint pycodestyle pydocstyle ## Run linters and static analysis
 
 .PHONY: pylint
-pylint: install ## Check for code issues
+pylint: install
 	$(PYLINT) $(PACKAGES) $(CONFIG) --rcfile=.pylint.ini
 
 .PHONY: pycodestyle
-pycodestyle: install ## Check for code conventions
+pycodestyle: install
 	$(PYCODESTYLE) $(PACKAGES) $(CONFIG) --config=.pycodestyle.ini
 
 .PHONY: pydocstyle
-pydocstyle: install ## Check for docstring conventions
+pydocstyle: install
 	$(PYDOCSTYLE) $(PACKAGES) $(CONFIG)
 
 # TESTS ########################################################################
@@ -155,17 +155,17 @@ NOSE_OPTS := --with-doctest --with-cov --cov=$(PACKAGE) --cov-report=html  --cov
 test: test-all ## Run unit and integration tests
 
 .PHONY: test-unit
-test-unit: install .clean-test ## Run the unit tests
+test-unit: install .clean-test
 	$(NOSE) $(PACKAGE) $(NOSE_OPTS)
 	$(COVERAGE_SPACE) $(REPOSITORY) unit
 
 .PHONY: test-int
-test-int: install .clean-test ## Run the integration tests
+test-int: install .clean-test
 	$(NOSE) tests $(NOSE_OPTS)
 	$(COVERAGE_SPACE) $(REPOSITORY) integration
 
 .PHONY: test-all
-test-all: install .clean-test ## Run all the tests
+test-all: install .clean-test
 	$(NOSE) $(PACKAGES) $(NOSE_OPTS)
 	$(COVERAGE_SPACE) $(REPOSITORY) overall
 
@@ -186,20 +186,20 @@ MKDOCS_INDEX := site/index.html
 doc: uml pdoc mkdocs ## Generate documentaiton
 
 .PHONY: uml
-uml: install docs/*.png ## Generate UML diagrams for classes and packages
+uml: install docs/*.png
 docs/*.png: $(MODULES)
 	$(PYREVERSE) $(PACKAGE) -p $(PACKAGE) -a 1 -f ALL -o png --ignore tests
 	- mv -f classes_$(PACKAGE).png docs/classes.png
 	- mv -f packages_$(PACKAGE).png docs/packages.png
 
 .PHONY: pdoc
-pdoc: install $(PDOC_INDEX)  ## Generate API documentaiton with pdoc
+pdoc: install $(PDOC_INDEX)
 $(PDOC_INDEX): $(MODULES)
 	$(PDOC) --html --overwrite $(PACKAGE) --html-dir docs/apidocs
 	@ touch $@
 
 .PHONY: mkdocs
-mkdocs: install $(MKDOCS_INDEX) ## Build the documentation site with mkdocs
+mkdocs: install $(MKDOCS_INDEX)
 $(MKDOCS_INDEX): mkdocs.yml docs/*.md
 	ln -sf `realpath README.md --relative-to=docs` docs/index.md
 	ln -sf `realpath CHANGELOG.md --relative-to=docs/about` docs/about/changelog.md
@@ -208,7 +208,7 @@ $(MKDOCS_INDEX): mkdocs.yml docs/*.md
 	$(MKDOCS) build --clean --strict
 
 .PHONY: mkdocs-live
-mkdocs-live: mkdocs ## Launch and continuously rebuild the mkdocs site
+mkdocs-live: mkdocs
 	eval "sleep 3; open http://127.0.0.1:8000" &
 	$(MKDOCS) serve
 
