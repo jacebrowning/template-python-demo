@@ -8,7 +8,7 @@ A sample project templated from jacebrowning/template-python.
 
 ## Requirements
 
-* Python 3.5+
+* Python 3.6+
 
 ## Installation
 
