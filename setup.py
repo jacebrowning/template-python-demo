@@ -9,7 +9,7 @@ import setuptools
 
 
 PACKAGE_NAME = 'demo'
-MINIMUM_PYTHON_VERSION = 3, 5
+MINIMUM_PYTHON_VERSION = 3, 6
 
 
 def check_python_version():
@@ -67,7 +67,7 @@ setuptools.setup(
         'Operating System :: OS Independent',
         'Programming Language :: Python',
         'Programming Language :: Python :: 3',
-        'Programming Language :: Python :: 3.5',
+        'Programming Language :: Python :: 3.6',
     ],
 
     install_requires=open("requirements.txt").readlines(),
