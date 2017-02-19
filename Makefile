@@ -35,11 +35,7 @@ else
 endif
 
 # Virtual environment paths
-ifdef TRAVIS
-	ENV := $(shell dirname $(shell dirname $(shell which $(SYS_PYTHON))))/
-else
-	ENV := env
-endif
+ENV := .venv
 ifneq ($(findstring win32, $(PLATFORM)), )
 	BIN := $(ENV)/Scripts
 	ACTIVATE := $(BIN)/activate.bat
@@ -55,10 +51,10 @@ else
 endif
 
 # Virtual environment executables
-PYTHON := $(BIN)/python
-PIP := $(BIN)/pip
-EASY_INSTALL := $(BIN)/easy_install
-SNIFFER := $(BIN)/sniffer
+PYTHON := pipenv run python
+PIP := pipenv run pip
+EASY_INSTALL := pipenv run easy_install
+SNIFFER := pipenv run sniffer
 
 # MAIN TASKS ###################################################################
 
@@ -84,44 +80,40 @@ doctor:  ## Confirm system dependencies are available
 
 # PROJECT DEPENDENCIES #########################################################
 
-DEPS_CI := $(ENV)/.install-ci
-DEPS_DEV := $(ENV)/.install-dev
-DEPS_BASE := $(ENV)/.install-base
+export PIPENV_SHELL_COMPAT=true
+export PIPENV_ENV_IN_PROJECT=true
+
+DEPS := $(ENV)/.deps
+INFO := *.egg-info
 
 .PHONY: install
-install: $(DEPS_CI) $(DEPS_DEV) $(DEPS_BASE) ## Install all project dependencies
+install: $(ENV) $(DEPS) $(INFO)
 
-$(DEPS_CI): requirements/ci.txt $(PIP)
-	$(PIP) install --upgrade -r $<
-	@ touch $@  # flag to indicate dependencies are installed
+$(ENV):
+	pipenv --python=$(SYS_PYTHON)
+	@ touch $@
 
-$(DEPS_DEV): requirements/dev.txt $(PIP)
-	$(PIP) install --upgrade -r $<
+$(DEPS): $(ENV) Pipfile*
+	pipenv install --dev
 ifdef WINDOWS
 	@ echo "Manually install pywin32: https://sourceforge.net/projects/pywin32/files/pywin32"
 else ifdef MAC
-	$(PIP) install --upgrade pync MacFSEvents
+	$(PIP) install pync MacFSEvents
 else ifdef LINUX
-	$(PIP) install --upgrade pyinotify
+	$(PIP) install pyinotify
 endif
-	@ touch $@  # flag to indicate dependencies are installed
-
-$(DEPS_BASE): setup.py requirements.txt $(PYTHON)
-	$(PYTHON) setup.py develop
-	@ touch $@  # flag to indicate dependencies are installed
-
-$(PIP): $(PYTHON)
-	$(PYTHON) -m pip install --upgrade pip setuptools
 	@ touch $@
 
-$(PYTHON):
-	$(SYS_PYTHON) -m venv $(ENV)
+$(INFO): $(ENV)
+	pipenv install --dev
+	pipenv run python setup.py develop
+	@ touch $@
 
 # CHECKS #######################################################################
 
-PYLINT := $(BIN)/pylint
-PYCODESTYLE := $(BIN)/pycodestyle
-PYDOCSTYLE := $(BIN)/pydocstyle
+PYLINT := pipenv run pylint
+PYCODESTYLE := pipenv run pycodestyle
+PYDOCSTYLE := pipenv run pydocstyle
 
 .PHONY: check
 check: pylint pycodestyle pydocstyle ## Run linters and static analysis
@@ -140,9 +132,9 @@ pydocstyle: install
 
 # TESTS ########################################################################
 
-NOSE := $(BIN)/nosetests
-COVERAGE := $(BIN)/coverage
-COVERAGE_SPACE := $(BIN)/coverage.space
+NOSE := pipenv run nosetests
+COVERAGE := pipenv run coverage
+COVERAGE_SPACE := pipenv run coverage.space
 
 RANDOM_SEED ?= $(shell date +%s)
 
@@ -172,15 +164,13 @@ read-coverage:
 
 # DOCUMENTATION ################################################################
 
-PYREVERSE := $(BIN)/pyreverse
-PDOC := $(PYTHON) $(BIN)/pdoc
-MKDOCS := $(BIN)/mkdocs
+PYREVERSE := pipenv run pyreverse
+MKDOCS := pipenv run mkdocs
 
-PDOC_INDEX := docs/apidocs/$(PACKAGE)/index.html
 MKDOCS_INDEX := site/index.html
 
 .PHONY: doc
-doc: uml pdoc mkdocs ## Generate documentation
+doc: uml mkdocs ## Generate documentation
 
 .PHONY: uml
 uml: install docs/*.png
@@ -188,12 +178,6 @@ docs/*.png: $(MODULES)
 	$(PYREVERSE) $(PACKAGE) -p $(PACKAGE) -a 1 -f ALL -o png --ignore tests
 	- mv -f classes_$(PACKAGE).png docs/classes.png
 	- mv -f packages_$(PACKAGE).png docs/packages.png
-
-.PHONY: pdoc
-pdoc: install $(PDOC_INDEX)
-$(PDOC_INDEX): $(MODULES)
-	$(PDOC) --html --overwrite $(PACKAGE) --html-dir docs/apidocs
-	@ touch $@
 
 .PHONY: mkdocs
 mkdocs: install $(MKDOCS_INDEX)
@@ -211,8 +195,8 @@ mkdocs-live: mkdocs
 
 # BUILD ########################################################################
 
-PYINSTALLER := $(BIN)/pyinstaller
-PYINSTALLER_MAKESPEC := $(BIN)/pyi-makespec
+PYINSTALLER := pipenv run pyinstaller
+PYINSTALLER_MAKESPEC := pipenv run pyi-makespec
 
 DIST_FILES := dist/*.tar.gz dist/*.whl
 EXE_FILES := dist/$(PROJECT).*
@@ -239,7 +223,7 @@ $(PROJECT).spec:
 
 # RELEASE ######################################################################
 
-TWINE := $(BIN)/twine
+TWINE := pipenv run twine
 
 .PHONY: register
 register: dist ## Register the project on PyPI
