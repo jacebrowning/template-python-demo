@@ -1,0 +1,25 @@
+[[source]]
+url = "https://pypi.python.org/simple"
+verify_ssl = true
+
+[packages]
+testpackage = "*"
+
+[dev-packages]
+pycodestyle = "*"
+pydocstyle = "*"
+pylint = "*"
+pytest = "*"
+pytest-describe = "*"
+pytest-expecter = "*"
+pytest-cov = "*"
+pytest-random = "*"
+coverage = "*"
+"coverage.space" = "*"
+mkdocs = "*"
+docutils = "*"
+wheel = "*"
+twine = "*"
+sniffer = "*"
+Pygments = "*"
+PyInstaller = "*"
