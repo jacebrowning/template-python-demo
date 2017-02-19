@@ -8,7 +8,7 @@
     * Windows: http://mingw.org/download/installer
     * Mac: http://developer.apple.com/xcode
     * Linux: http://www.gnu.org/software/make
-* virtualenv: http://pypi.python.org/pypi/virtualenv#installation
+* pipenv: http://docs.pipenv.org
 * Pandoc: http://johnmacfarlane.net/pandoc/installing.html
 * Graphviz: http://www.graphviz.org/Download.php
 
@@ -34,7 +34,6 @@ Manually run the tests:
 
 ```sh
 $ make test
-$ make tests  # includes integration tests
 ```
 
 or keep them running on change:
@@ -58,9 +57,9 @@ $ make doc
 Run linters and static analyzers:
 
 ```sh
-$ make pep8
-$ make pep257
 $ make pylint
+$ make pycodestyle
+$ make pydocstyle
 $ make check  # includes all checks
 ```
 
@@ -77,6 +76,5 @@ $ make ci
 Release to PyPI:
 
 ```sh
-$ make upload-test  # dry run upload to a test server
 $ make upload
 ```

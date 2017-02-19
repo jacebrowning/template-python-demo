@@ -1,0 +1,3 @@
+[pytest11]
+pytest_random = random_plugin
+
