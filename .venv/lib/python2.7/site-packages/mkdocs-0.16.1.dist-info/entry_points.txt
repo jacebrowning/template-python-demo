@@ -1,0 +1,7 @@
+[console_scripts]
+mkdocs = mkdocs.__main__:cli
+
+[mkdocs.themes]
+mkdocs = mkdocs.themes.mkdocs
+readthedocs = mkdocs.themes.readthedocs
+

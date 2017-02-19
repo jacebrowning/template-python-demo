@@ -70,5 +70,7 @@ setuptools.setup(
         'Programming Language :: Python :: 2.7',
     ],
 
-    install_requires=open("requirements.txt").readlines(),
+    install_requires=[
+        "testpackage ~= 2.26",
+    ]
 )
