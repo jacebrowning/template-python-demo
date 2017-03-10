@@ -6,7 +6,7 @@ tools:
   external_code_coverage: true
   pylint:
     python_version: 2
-    config_file: '.pylintrc'
+    config_file: .pylint.ini
 filter:
   excluded_paths:
     - "*/tests/*"
