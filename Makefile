@@ -141,7 +141,10 @@ COVERAGE_SPACE := pipenv run coverage.space
 
 RANDOM_SEED ?= $(shell date +%s)
 
-NOSE_OPTIONS := --with-doctest --with-cov --cov=$(PACKAGE) --cov-report=html --cov-report=term-missing
+NOSE_OPTIONS := --with-doctest
+ifndef DISABLE_COVERAGE
+NOSE_OPTIONS += --with-cov --cov=$(PACKAGE) --cov-report=html --cov-report=term-missing
+endif
 
 .PHONY: test
 test: test-all ## Run unit and integration tests
