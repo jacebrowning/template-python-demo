@@ -140,25 +140,24 @@ COVERAGE := pipenv run coverage
 COVERAGE_SPACE := pipenv run coverage.space
 
 RANDOM_SEED ?= $(shell date +%s)
-
-NOSE_OPTS := --with-doctest --with-cov --cov=$(PACKAGE) --cov-report=html  --cov-report=term-missing
+NOSE_OPTIONS := --with-doctest --with-cov --cov=$(PACKAGE) --cov-report=html --cov-report=term-missing
 
 .PHONY: test
 test: test-all ## Run unit and integration tests
 
 .PHONY: test-unit
 test-unit: install .clean-test
-	$(NOSE) $(PACKAGE) $(NOSE_OPTS)
+	$(NOSE) $(PACKAGE) $(NOSE_OPTIONS)
 	$(COVERAGE_SPACE) $(REPOSITORY) unit
 
 .PHONY: test-int
 test-int: install .clean-test
-	$(NOSE) tests $(NOSE_OPTS)
+	$(NOSE) tests $(NOSE_OPTIONS)
 	$(COVERAGE_SPACE) $(REPOSITORY) integration
 
 .PHONY: test-all
 test-all: install .clean-test
-	$(NOSE) $(PACKAGES) $(NOSE_OPTS)
+	$(NOSE) $(PACKAGES) $(NOSE_OPTIONS)
 	$(COVERAGE_SPACE) $(REPOSITORY) overall
 
 .PHONY: read-coverage
