@@ -140,6 +140,7 @@ COVERAGE := pipenv run coverage
 COVERAGE_SPACE := pipenv run coverage.space
 
 RANDOM_SEED ?= $(shell date +%s)
+
 NOSE_OPTIONS := --with-doctest --with-cov --cov=$(PACKAGE) --cov-report=html --cov-report=term-missing
 
 .PHONY: test
