@@ -148,7 +148,7 @@ PYTEST_COV_OPTIONS := --cov=$(PACKAGE) --no-cov-on-fail --cov-report=term-missin
 PYTEST_RANDOM_OPTIONS := --random --random-seed=$(RANDOM_SEED)
 
 PYTEST_OPTIONS := $(PYTEST_CORE_OPTIONS) $(PYTEST_RANDOM_OPTIONS)
-ifndef CI
+ifndef DISABLE_COVERAGE
 PYTEST_OPTIONS += $(PYTEST_COV_OPTIONS)
 endif
 PYTEST_RURUN_OPTIONS := $(PYTEST_CORE_OPTIONS) --last-failed --exitfirst
