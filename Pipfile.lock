@@ -25,8 +25,8 @@
             "version": "==2.2.0"
         },
         "setuptools": {
-            "hash": "sha256:ef21066d478573a7f92bebb759b6d6fac4c1a4ace08d79f61103eb294337f2df",
-            "version": "==34.4.0"
+            "hash": "sha256:1f7aac8b778446406ec5dcd5cc9305b375e7935e38f2fd3b1b70168c21a079d0",
+            "version": "==34.4.1"
         },
         "six": {
             "hash": "sha256:0ff78c403d9bccf5a425a6d31a12aa6b47f1c21ca4dc2573a7e2f32a97335eb1",
@@ -187,8 +187,8 @@
             "version": "==0.7.1"
         },
         "setuptools": {
-            "hash": "sha256:ef21066d478573a7f92bebb759b6d6fac4c1a4ace08d79f61103eb294337f2df",
-            "version": "==34.4.0"
+            "hash": "sha256:1f7aac8b778446406ec5dcd5cc9305b375e7935e38f2fd3b1b70168c21a079d0",
+            "version": "==34.4.1"
         },
         "singledispatch": {
             "hash": "sha256:833b46966687b3de7f438c761ac475213e53b306740f1abfaa86e1d1aae56aa8",
