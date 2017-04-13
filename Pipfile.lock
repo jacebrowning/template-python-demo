@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "cbebbcb93442745b5e9706824e8b35c87c9348fff8b7095e609c1afa8a20f7f4"
+            "sha256": "eeb742385cdab57d9d2a37dc7c867f6ed04e47ddfbcf8b742008e23cab82301b"
         },
         "requires": {},
         "sources": [
@@ -71,8 +71,8 @@
             "version": "==0.1.0"
         },
         "astroid": {
-            "git": "https://github.com/PyCQA/astroid.git",
-            "ref": "4e7d9fee4080d2e0db67a3e0463be8b196e56a95"
+            "hash": "sha256:507296783e8a428c2105edc6152bd901becf38b0058ebbe41edeafc8caaff0b8",
+            "version": "==1.5.1"
         },
         "backports.shutil_get_terminal_size": {
             "hash": "sha256:0975ba55054c15e346944b38956a4c9cbee9009391e41b86c68990effb8c1f64",
@@ -106,9 +106,25 @@
             "hash": "sha256:cb3ebcb09242804f84bdbf0b26504077a054da6772c6f4d625f335cc53ebf94d",
             "version": "==0.13.1"
         },
+        "editdistance": {
+            "hash": "sha256:8ec8a2158b9234adb0ca7ecfb0b4caa35e45ad5d00353c80793c9f54e1a35121",
+            "version": "==0.3.1"
+        },
+        "isort": {
+            "hash": "sha256:a0c38c1c5e4c70ea1141daa80c740372ad94351e92e9e07da1cd86ce65653dc4",
+            "version": "==4.2.5"
+        },
+        "lazy-object-proxy": {
+            "hash": "sha256:ddd4cf1c74279c349cb7b9c54a2efa5105854f57de5f2d35829ee93631564268",
+            "version": "==1.2.2"
+        },
         "livereload": {
             "hash": "sha256:422de10d7ea9467a1ba27cbaffa84c74b809d96fb1598d9de4b9b676adf35e2c",
             "version": "==2.5.1"
+        },
+        "mccabe": {
+            "hash": "sha256:ab8a6258860da4b6677da4bd2fe5dc2c659cff31b3ee4f7f5d64e79735b80d42",
+            "version": "==0.6.1"
         },
         "mkdocs": {
             "hash": "sha256:005b87441084aacd67ada15843c4ed2746bf324103a5bd94c02d36d9b307310f",
@@ -139,8 +155,8 @@
             "version": "==1.1.1"
         },
         "pylint": {
-            "git": "https://github.com/PyCQA/pylint.git",
-            "ref": "e0fdd25c214e60bef10fbaa46252f4aaa74de8c2"
+            "hash": "sha256:7d31ff5a6ac41f6d456d896182f3b0c00adcef817cea7136ee85a8a2569559f8",
+            "version": "==1.7.0"
         },
         "pyparsing": {
             "hash": "sha256:fee43f17a9c4087e7ed1605bd6df994c6173c1e977d7ade7b651292fab2bd010",
@@ -201,6 +217,10 @@
         "wheel": {
             "hash": "sha256:ea8033fc9905804e652f75474d33410a07404c1a78dd3c949a66863bd1050ebd",
             "version": "==0.29.0"
+        },
+        "wrapt": {
+            "hash": "sha256:42160c91b77f1bc64a955890038e02f2f72986c01d462d53cb6cb039b995cdd9",
+            "version": "==1.10.10"
         }
     }
 }
