@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "fa898732777b7688bf211af652bcf7b5d98203149224e24433eb81bc73e03232"
+            "sha256": "a66c2e65f73839b1cb7a406cc9d2c920a11b238a2445c7247c71224b9d9fb8cc"
         },
         "requires": {},
         "sources": [
@@ -91,8 +91,8 @@
             "version": "==4.3.4"
         },
         "coverage.space": {
-            "hash": "sha256:a1bc7dd23aa9fd67f89cf296644c36a00091b8753c55c3cd78a231935bde15f5",
-            "version": "==0.7.2.post4"
+            "hash": "sha256:31cb5ba7d28d389e29e9779ba204de27c333d8589161cebe03a1cb1503c66059",
+            "version": "==0.8"
         },
         "docopt": {
             "hash": "sha256:49b3a825280bd66b3aa83585ef59c4a8c82f2c8a522dbe754a8bc8d08c85c491",
