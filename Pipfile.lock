@@ -71,8 +71,8 @@
             "version": "==0.1.0"
         },
         "astroid": {
-            "hash": "sha256:507296783e8a428c2105edc6152bd901becf38b0058ebbe41edeafc8caaff0b8",
-            "version": "==1.5.1"
+            "hash": "sha256:9c19f72d865a539e91115cdb6a293b5c2fecb5f611fad38b21a961a925c2e3f1",
+            "version": "==1.5.2"
         },
         "backports.shutil_get_terminal_size": {
             "hash": "sha256:0975ba55054c15e346944b38956a4c9cbee9009391e41b86c68990effb8c1f64",
@@ -109,10 +109,6 @@
         "docutils": {
             "hash": "sha256:cb3ebcb09242804f84bdbf0b26504077a054da6772c6f4d625f335cc53ebf94d",
             "version": "==0.13.1"
-        },
-        "editdistance": {
-            "hash": "sha256:8ec8a2158b9234adb0ca7ecfb0b4caa35e45ad5d00353c80793c9f54e1a35121",
-            "version": "==0.3.1"
         },
         "expecter": {
             "hash": "sha256:4d2cab9d9c80620456231106b989c9a6c70f8f7f3a9725a6644097bd3017705a",
@@ -163,8 +159,8 @@
             "version": "==1.1.1"
         },
         "pylint": {
-            "hash": "sha256:7d31ff5a6ac41f6d456d896182f3b0c00adcef817cea7136ee85a8a2569559f8",
-            "version": "==1.7.0"
+            "hash": "sha256:402931e0b15ac2fa05387a125cb049aba4fcd841c362613c6ad1675e0e5135d8",
+            "version": "==1.7.1"
         },
         "pyparsing": {
             "hash": "sha256:fee43f17a9c4087e7ed1605bd6df994c6173c1e977d7ade7b651292fab2bd010",
