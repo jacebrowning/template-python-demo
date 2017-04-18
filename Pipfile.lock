@@ -47,8 +47,8 @@
             "version": "==0.1.0"
         },
         "astroid": {
-            "hash": "sha256:507296783e8a428c2105edc6152bd901becf38b0058ebbe41edeafc8caaff0b8",
-            "version": "==1.5.1"
+            "hash": "sha256:9c19f72d865a539e91115cdb6a293b5c2fecb5f611fad38b21a961a925c2e3f1",
+            "version": "==1.5.2"
         },
         "backports-abc": {
             "hash": "sha256:52089f97fe7a9aa0d3277b220c1d730a85aefd64e1b2664696fe35317c5470a7",
@@ -63,8 +63,8 @@
             "version": "==1.0.0"
         },
         "certifi": {
-            "hash": "sha256:f74a224a9860fd5a2e9757230a7ea3eba82d6d46914780abc18e70c8b58d4bf8",
-            "version": "==2017.1.23"
+            "hash": "sha256:f4318671072f030a33c7ca6acaef720ddd50ff124d1388e50c1bda4cbd6d7010",
+            "version": "==2017.4.17"
         },
         "click": {
             "hash": "sha256:29f99fc6125fbc931b758dc053b3114e55c77a6e4c6c3a2674a2dc986016381d",
@@ -101,10 +101,6 @@
         "docutils": {
             "hash": "sha256:de454f1015958450b72641165c08afe7023cd7e3944396448f2fb1b0ccba9d77",
             "version": "==0.13.1"
-        },
-        "editdistance": {
-            "hash": "sha256:8ec8a2158b9234adb0ca7ecfb0b4caa35e45ad5d00353c80793c9f54e1a35121",
-            "version": "==0.3.1"
         },
         "enum34": {
             "hash": "sha256:6bd0f6ad48ec2aa117d3d141940d484deccda84d4fcd884f5c3d93c23ecd8c79",
@@ -179,8 +175,8 @@
             "version": "==3.2.1"
         },
         "pylint": {
-            "hash": "sha256:7d31ff5a6ac41f6d456d896182f3b0c00adcef817cea7136ee85a8a2569559f8",
-            "version": "==1.7.0"
+            "hash": "sha256:402931e0b15ac2fa05387a125cb049aba4fcd841c362613c6ad1675e0e5135d8",
+            "version": "==1.7.1"
         },
         "pyparsing": {
             "hash": "sha256:fee43f17a9c4087e7ed1605bd6df994c6173c1e977d7ade7b651292fab2bd010",
