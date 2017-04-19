@@ -6,9 +6,9 @@ verify_ssl = true
 testpackage = "*"
 
 [dev-packages]
-pylint = "~=1.7.0"
-pycodestyle = "*"
-pydocstyle = "*"
+pylint = "~=1.7"
+pycodestyle = "~=2.3"
+pydocstyle = "~=2.0"
 pytest = "~=3.0.7"
 pytest-describe = "==0.11.0"
 pytest-expecter = "==0.2.2.post6"

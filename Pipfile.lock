@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "03884222f01cac81ef2d5fc7126bcd0c7eaf6f31b79d74dbd001fd58017d8064"
+            "sha256": "8733cc3592c0a830a44b9b7b2af12f800287570d84364c7806123bd27ab2c9f6"
         },
         "requires": {},
         "sources": [
@@ -25,8 +25,8 @@
             "version": "==2.2.0"
         },
         "setuptools": {
-            "hash": "sha256:b427014a0cf196e57727e141899c20381051233094783aa6274780a100eb65d9",
-            "version": "==35.0.0"
+            "hash": "sha256:33a7b7910651bea57164c6c6dd66a2b1c5196c0f78ee2ff7319ce7bd031714c0",
+            "version": "==35.0.1"
         },
         "six": {
             "hash": "sha256:0ff78c403d9bccf5a425a6d31a12aa6b47f1c21ca4dc2573a7e2f32a97335eb1",
@@ -147,8 +147,8 @@
             "version": "==2.3.1"
         },
         "pydocstyle": {
-            "hash": "sha256:20939fb9c2d61a9870449573d9ed762ec040c764b2241bec22c5ea956b9caf90",
-            "version": "==1.1.1"
+            "hash": "sha256:199fc5d0c03b737f0999613e2784bb5b47ad9ea0211b011ee5ea0afd51aa62e9",
+            "version": "==2.0.0"
         },
         "pylint": {
             "hash": "sha256:402931e0b15ac2fa05387a125cb049aba4fcd841c362613c6ad1675e0e5135d8",
@@ -191,8 +191,8 @@
             "version": "==0.7.1"
         },
         "setuptools": {
-            "hash": "sha256:b427014a0cf196e57727e141899c20381051233094783aa6274780a100eb65d9",
-            "version": "==35.0.0"
+            "hash": "sha256:33a7b7910651bea57164c6c6dd66a2b1c5196c0f78ee2ff7319ce7bd031714c0",
+            "version": "==35.0.1"
         },
         "six": {
             "hash": "sha256:0ff78c403d9bccf5a425a6d31a12aa6b47f1c21ca4dc2573a7e2f32a97335eb1",
@@ -201,6 +201,10 @@
         "sniffer": {
             "hash": "sha256:e8a0daa4c51dff3d00482b45dc9b978159100a8d5a7df327c28ed96586559970",
             "version": "==0.4.0"
+        },
+        "snowballstemmer": {
+            "hash": "sha256:9f3bcd3c401c3e862ec0ebe6d2c069ebc012ce142cce209c098ccb5b09136e89",
+            "version": "==1.2.1"
         },
         "tornado": {
             "hash": "sha256:8861cce3c081557cfca2623507290ed647978ea275c29e2e3dfeeb63ca61e855",
