@@ -75,8 +75,8 @@
             "version": "==0.5.1"
         },
         "colorama": {
-            "hash": "sha256:a4c0f5bc358a62849653471e309dcc991223cf86abafbec17cd8f41327279e89",
-            "version": "==0.3.7"
+            "hash": "sha256:37fed83335fc371eebe48f6f297081962e162c10fc54d47253c6354734eb9625",
+            "version": "==0.3.8"
         },
         "configparser": {
             "hash": "sha256:5308b47021bc2340965c371f0f058cc6971a04502638d4244225c49d80db273a",
@@ -219,8 +219,8 @@
             "version": "==1.2.1"
         },
         "tornado": {
-            "hash": "sha256:8861cce3c081557cfca2623507290ed647978ea275c29e2e3dfeeb63ca61e855",
-            "version": "==4.5"
+            "hash": "sha256:db0904a28253cfe53e7dedc765c71596f3c53bb8a866ae50123320ec1a7b73fd",
+            "version": "==4.5.1"
         },
         "twine": {
             "hash": "sha256:3202d943a144962a821d9c5e92e07f9442dbbe6d6f18eae74e2a725b9980c559",
