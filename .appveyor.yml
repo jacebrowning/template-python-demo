@@ -7,7 +7,7 @@ environment:
       PYTHON_MINOR: 6
 
 cache:
-  - .venv
+  - .venv -> .appveyor.yml
 
 install:
   # Export build paths
