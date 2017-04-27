@@ -87,8 +87,8 @@
             "version": "==0.5.1"
         },
         "colorama": {
-            "hash": "sha256:37fed83335fc371eebe48f6f297081962e162c10fc54d47253c6354734eb9625",
-            "version": "==0.3.8"
+            "hash": "sha256:463f8483208e921368c9f306094eb6f725c6ca42b0f97e313cb5d5512459feda",
+            "version": "==0.3.9"
         },
         "coverage": {
             "hash": "sha256:2f5a8bf29bdc69976d0913745daab11f8265e46ec41153f5e1e1794088019dad",
