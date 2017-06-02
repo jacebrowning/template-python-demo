@@ -1,7 +1,8 @@
-"""A sample module."""
+"""A sample GUI."""
+
+import logging
 from Tkinter import *  # pylint: disable=wildcard-import,unused-wildcard-import
 from ttk import *  # pylint: disable=wildcard-import,unused-wildcard-import
-import logging
 
 from . import utils
 

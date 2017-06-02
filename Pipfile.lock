@@ -1,9 +1,11 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "b24f89da4d02fd06400c8f76b9ae1e450d3d35ae070403a7ed1ca36ed6b71be8"
+            "sha256": "e07ac6bf2994e303f1cfbf5af15bf4789f3fd3f7631e74862b5026c020ca2486"
         },
-        "requires": {},
+        "requires": {
+            "python_version": "2.7"
+        },
         "sources": [
             {
                 "url": "https://pypi.python.org/simple",
@@ -12,29 +14,14 @@
         ]
     },
     "default": {
-        "appdirs": {
-            "version": "==1.4.3"
-        },
-        "packaging": {
-            "version": "==16.8"
-        },
-        "pyparsing": {
-            "version": "==2.2.0"
-        },
         "setuptools": {
-            "version": "==35.0.2"
-        },
-        "six": {
-            "version": "==1.10.0"
+            "version": "==36.0.1"
         },
         "testpackage": {
             "version": "==2.27"
         }
     },
     "develop": {
-        "appdirs": {
-            "version": "==1.4.3"
-        },
         "astroid": {
             "version": "==1.5.2"
         },
@@ -87,7 +74,7 @@
             "version": "==2.5"
         },
         "isort": {
-            "version": "==4.2.5"
+            "version": "==4.2.12"
         },
         "jinja2": {
             "version": "==2.9.6"
@@ -116,9 +103,6 @@
         "nose-cov": {
             "version": "==1.6"
         },
-        "packaging": {
-            "version": "==16.8"
-        },
         "pkginfo": {
             "version": "==1.4.1"
         },
@@ -137,9 +121,6 @@
         "pylint": {
             "version": "==1.7.1"
         },
-        "pyparsing": {
-            "version": "==2.2.0"
-        },
         "python-termstyle": {
             "version": "==0.1.10"
         },
@@ -153,7 +134,7 @@
             "version": "==0.8.0"
         },
         "setuptools": {
-            "version": "==35.0.2"
+            "version": "==36.0.1"
         },
         "singledispatch": {
             "version": "==3.4.0.3"
