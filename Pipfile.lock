@@ -23,7 +23,7 @@
     },
     "develop": {
         "astroid": {
-            "version": "==1.5.2"
+            "version": "==1.5.3"
         },
         "backports.shutil-get-terminal-size": {
             "version": "==1.0.0"
@@ -32,7 +32,7 @@
             "version": "==2017.4.17"
         },
         "chardet": {
-            "version": "==3.0.3"
+            "version": "==3.0.4"
         },
         "click": {
             "version": "==6.7"
@@ -56,7 +56,7 @@
             "version": "==2.5"
         },
         "isort": {
-            "version": "==4.2.12"
+            "version": "==4.2.15"
         },
         "jinja2": {
             "version": "==2.9.6"
@@ -86,7 +86,7 @@
             "version": "==1.4.1"
         },
         "py": {
-            "version": "==1.4.33"
+            "version": "==1.4.34"
         },
         "pycodestyle": {
             "version": "==2.3.1"
@@ -104,7 +104,7 @@
             "version": "==1.7.1"
         },
         "pytest": {
-            "version": "==3.1.1"
+            "version": "==3.1.2"
         },
         "pytest-cov": {
             "version": "==2.5.1"
