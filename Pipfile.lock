@@ -101,7 +101,7 @@
             "version": "==3.2.1"
         },
         "pylint": {
-            "version": "==1.7.1"
+            "version": "==1.7.2"
         },
         "pytest": {
             "version": "==3.1.2"
@@ -125,7 +125,7 @@
             "version": "==3.12"
         },
         "requests": {
-            "version": "==2.17.3"
+            "version": "==2.18.1"
         },
         "requests-toolbelt": {
             "version": "==0.8.0"
