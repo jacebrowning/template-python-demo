@@ -46,7 +46,7 @@ setuptools.setup(
     name=read_package_variable('__project__'),
     version=read_package_variable('__version__'),
 
-    description="A sample project templated from jacebrowning/template-python.",
+    description="Sample project generated from jacebrowning/template-python.",
     url='https://github.com/jacebrowning/template-python-demo',
     author='Jace Browning',
     author_email='jacebrowning@gmail.com',
