@@ -2,7 +2,7 @@ Unix: [![Unix Build Status](https://img.shields.io/travis/jacebrowning/template-
 
 # Overview
 
-A sample project templated from jacebrowning/template-python.
+Sample project generated from jacebrowning/template-python.
 
 # Setup
 
