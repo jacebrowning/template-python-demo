@@ -1,3 +1,3 @@
 # demo
 
-A sample project templated from jacebrowning/template-python.
+Sample project generated from jacebrowning/template-python.
