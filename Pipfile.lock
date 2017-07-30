@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "a6403182859893a2632cad586072206c7362a10f1abab7cfa412e36fe99b3188"
+            "sha256": "b620b5157b0010e71ce4520581da715e160e13247a1641f9a9519d31322f60d9"
         },
         "requires": {
             "python_version": "3.6"
@@ -15,7 +15,7 @@
     },
     "default": {
         "setuptools": {
-            "version": "==36.0.1"
+            "version": "==36.2.4"
         },
         "testpackage": {
             "version": "==2.27"
@@ -29,7 +29,7 @@
             "version": "==1.0.0"
         },
         "certifi": {
-            "version": "==2017.4.17"
+            "version": "==2017.7.27.1"
         },
         "chardet": {
             "version": "==3.0.4"
@@ -106,6 +106,9 @@
         "pytest": {
             "version": "==3.1.3"
         },
+        "pytest-catchlog": {
+            "version": "==1.2.2"
+        },
         "pytest-cov": {
             "version": "==2.5.1"
         },
@@ -125,13 +128,13 @@
             "version": "==3.12"
         },
         "requests": {
-            "version": "==2.18.1"
+            "version": "==2.18.2"
         },
         "requests-toolbelt": {
             "version": "==0.8.0"
         },
         "setuptools": {
-            "version": "==36.0.1"
+            "version": "==36.2.4"
         },
         "six": {
             "version": "==1.10.0"
@@ -146,13 +149,13 @@
             "version": "==4.5.1"
         },
         "tqdm": {
-            "version": "==4.14.0"
+            "version": "==4.15.0"
         },
         "twine": {
             "version": "==1.9.1"
         },
         "urllib3": {
-            "version": "==1.21.1"
+            "version": "==1.22"
         },
         "wheel": {
             "version": "==0.29.0"
