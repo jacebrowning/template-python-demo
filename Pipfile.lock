@@ -15,7 +15,7 @@
     },
     "default": {
         "setuptools": {
-            "version": "==36.0.1"
+            "version": "==36.2.4"
         },
         "testpackage": {
             "version": "==2.27"
@@ -29,7 +29,7 @@
             "version": "==1.0.0"
         },
         "certifi": {
-            "version": "==2017.4.17"
+            "version": "==2017.7.27.1"
         },
         "chardet": {
             "version": "==3.0.4"
@@ -116,13 +116,13 @@
             "version": "==3.12"
         },
         "requests": {
-            "version": "==2.18.1"
+            "version": "==2.18.2"
         },
         "requests-toolbelt": {
             "version": "==0.8.0"
         },
         "setuptools": {
-            "version": "==36.0.1"
+            "version": "==36.2.4"
         },
         "six": {
             "version": "==1.10.0"
@@ -137,13 +137,13 @@
             "version": "==4.5.1"
         },
         "tqdm": {
-            "version": "==4.14.0"
+            "version": "==4.15.0"
         },
         "twine": {
             "version": "==1.9.1"
         },
         "urllib3": {
-            "version": "==1.21.1"
+            "version": "==1.22"
         },
         "wheel": {
             "version": "==0.29.0"
