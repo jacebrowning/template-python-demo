@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "e07ac6bf2994e303f1cfbf5af15bf4789f3fd3f7631e74862b5026c020ca2486"
+            "sha256": "0096ab9fdd2cc01f80ed8be10900396829d507f5e6106685657184c62c335e5f"
         },
         "requires": {
             "python_version": "2.7"
@@ -15,7 +15,7 @@
     },
     "default": {
         "setuptools": {
-            "version": "==36.2.4"
+            "version": "==36.2.7"
         },
         "testpackage": {
             "version": "==2.27"
@@ -49,9 +49,6 @@
         "configparser": {
             "version": "==3.5.0"
         },
-        "cov-core": {
-            "version": "==1.15.0"
-        },
         "coverage": {
             "version": "==4.4.1"
         },
@@ -62,7 +59,7 @@
             "version": "==0.6.2"
         },
         "docutils": {
-            "version": "==0.13.1"
+            "version": "==0.14"
         },
         "enum34": {
             "version": "==1.1.6"
@@ -71,7 +68,7 @@
             "version": "==0.3.0"
         },
         "idna": {
-            "version": "==2.5"
+            "version": "==2.6"
         },
         "isort": {
             "version": "==4.2.15"
@@ -86,7 +83,7 @@
             "version": "==2.5.1"
         },
         "markdown": {
-            "version": "==2.6.8"
+            "version": "==2.6.9"
         },
         "markupsafe": {
             "version": "==1.0"
@@ -99,9 +96,6 @@
         },
         "nose": {
             "version": "==1.3.7"
-        },
-        "nose-cov": {
-            "version": "==1.6"
         },
         "pkginfo": {
             "version": "==1.4.1"
@@ -128,13 +122,13 @@
             "version": "==3.12"
         },
         "requests": {
-            "version": "==2.18.2"
+            "version": "==2.18.4"
         },
         "requests-toolbelt": {
             "version": "==0.8.0"
         },
         "setuptools": {
-            "version": "==36.2.4"
+            "version": "==36.2.7"
         },
         "singledispatch": {
             "version": "==3.4.0.3"
@@ -164,7 +158,7 @@
             "version": "==0.29.0"
         },
         "wrapt": {
-            "version": "==1.10.10"
+            "version": "==1.10.11"
         }
     }
 }

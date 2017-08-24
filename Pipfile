@@ -14,8 +14,7 @@ pylint = "~=1.7"
 pycodestyle = "~=2.3"
 pydocstyle = "~=2.0"
 # Testing
-nose = "*"
-nose-cov = "*"
+nose = "~=1.3.7"
 expecter = "*"
 # Coverage
 coverage = "~=4.0"
