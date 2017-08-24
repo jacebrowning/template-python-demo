@@ -138,7 +138,7 @@ RANDOM_SEED ?= $(shell date +%s)
 
 NOSE_OPTIONS := --with-doctest
 ifndef DISABLE_COVERAGE
-NOSE_OPTIONS += --with-cov --cov=$(PACKAGE) --cov-report=html --cov-report=term-missing
+NOSE_OPTIONS += --with-coverage --cover-package=$(PACKAGE) --cover-html --cover-html-dir=htmlcov --cover-branches
 endif
 
 .PHONY: test
