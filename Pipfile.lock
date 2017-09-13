@@ -1,8 +1,22 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "12342869c50b887b1a2f96a0ebac8617134d7f7de81c11a56901f85d8b2f922e"
+            "sha256": "1f08978cc5e2aa61beedbd353bc80402606c63cf959a62482851cb495ce495ca"
         },
+        "host-environment-markers": {
+            "implementation_name": "cpython",
+            "implementation_version": "0",
+            "os_name": "posix",
+            "platform_machine": "x86_64",
+            "platform_python_implementation": "CPython",
+            "platform_release": "4.4.0-93-generic",
+            "platform_system": "Linux",
+            "platform_version": "#116~14.04.1-Ubuntu SMP Mon Aug 14 16:07:05 UTC 2017",
+            "python_full_version": "2.7.13",
+            "python_version": "2.7",
+            "sys_platform": "linux2"
+        },
+        "pipfile-spec": 1,
         "requires": {
             "python_version": "2.7"
         },
@@ -14,9 +28,6 @@
         ]
     },
     "default": {
-        "setuptools": {
-            "version": "==36.2.7"
-        },
         "testpackage": {
             "version": "==2.27"
         }
@@ -116,7 +127,7 @@
             "version": "==1.7.2"
         },
         "pytest": {
-            "version": "==3.2.1"
+            "version": "==3.0.7"
         },
         "pytest-catchlog": {
             "version": "==1.2.2"
@@ -131,7 +142,7 @@
             "version": "==0.2.2.post6"
         },
         "pytest-random": {
-            "version": "==0.02"
+            "version": "==0.2"
         },
         "python-termstyle": {
             "version": "==0.1.10"
@@ -144,9 +155,6 @@
         },
         "requests-toolbelt": {
             "version": "==0.8.0"
-        },
-        "setuptools": {
-            "version": "==36.2.7"
         },
         "singledispatch": {
             "version": "==3.4.0.3"
@@ -161,7 +169,7 @@
             "version": "==1.2.1"
         },
         "tornado": {
-            "version": "==4.5.1"
+            "version": "==4.5.2"
         },
         "tqdm": {
             "version": "==4.15.0"
@@ -173,7 +181,7 @@
             "version": "==1.22"
         },
         "wheel": {
-            "version": "==0.29.0"
+            "version": "==0.30.0"
         },
         "wrapt": {
             "version": "==1.10.11"
