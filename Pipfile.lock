@@ -1,8 +1,22 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "0096ab9fdd2cc01f80ed8be10900396829d507f5e6106685657184c62c335e5f"
+            "sha256": "8ec3861e188ce2ed652885616bb02e8ef6dd0b46ab8c9799616079a81f6c49e1"
         },
+        "host-environment-markers": {
+            "implementation_name": "cpython",
+            "implementation_version": "0",
+            "os_name": "posix",
+            "platform_machine": "x86_64",
+            "platform_python_implementation": "CPython",
+            "platform_release": "4.4.0-93-generic",
+            "platform_system": "Linux",
+            "platform_version": "#116~14.04.1-Ubuntu SMP Mon Aug 14 16:07:05 UTC 2017",
+            "python_full_version": "2.7.13",
+            "python_version": "2.7",
+            "sys_platform": "linux2"
+        },
+        "pipfile-spec": 1,
         "requires": {
             "python_version": "2.7"
         },
@@ -14,9 +28,6 @@
         ]
     },
     "default": {
-        "setuptools": {
-            "version": "==36.2.7"
-        },
         "testpackage": {
             "version": "==2.27"
         }
@@ -127,9 +138,6 @@
         "requests-toolbelt": {
             "version": "==0.8.0"
         },
-        "setuptools": {
-            "version": "==36.2.7"
-        },
         "singledispatch": {
             "version": "==3.4.0.3"
         },
@@ -143,7 +151,7 @@
             "version": "==1.2.1"
         },
         "tornado": {
-            "version": "==4.5.1"
+            "version": "==4.5.2"
         },
         "tqdm": {
             "version": "==4.15.0"
@@ -155,7 +163,7 @@
             "version": "==1.22"
         },
         "wheel": {
-            "version": "==0.29.0"
+            "version": "==0.30.0"
         },
         "wrapt": {
             "version": "==1.10.11"
