@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "1b14f8122d787813c1295e1fda4477136f9e7709d5be1df4cc497fb6852f2132"
+            "sha256": "b785ae33a2463cf8eaebfbecb8606149cbb719dea536d4269a2c1d3eaec3eec7"
         },
         "host-environment-markers": {
             "implementation_name": "cpython",
@@ -22,6 +22,7 @@
         },
         "sources": [
             {
+                "name": "pypi",
                 "url": "https://pypi.python.org/simple",
                 "verify_ssl": true
             }
@@ -55,7 +56,7 @@
                 "sha256:4ba998e881f285c1d1b73f5b6e3766539b4e162320f9589334400c5ddc35198c",
                 "sha256:31f235852f88edc1558d428d890663c49eb4514ffec9f3650e7f3c9e4a12e36f"
             ],
-            "markers": "python_version == '2.7'",
+            "markers": "python_version < '3.3'",
             "version": "==1.4"
         },
         "backports.shutil-get-terminal-size": {
