@@ -10,37 +10,30 @@ python_version = "3.6"
 
 [packages]
 
-# testpackage = "*"
+testpackage = "*"
 
 [dev-packages]
 
-# Linters
-pylint = "~=1.7"
-pycodestyle = "~=2.3"
-pydocstyle = "~=2.0"
-
-# Testing
+pylint = "*"
+pycodestyle = "*"
+pydocstyle = "*"
 pytest = "~=3.3"
-pytest-describe = {git="https://github.com/ropez/pytest-describe", ref="master"}
+pytest-describe = "*"
 pytest-expecter = "*"
-pytest-cov = "*"
 pytest-random = "*"
+pytest-cov = "*"
 
-# Coverage
-coverage = "*"
+freezegun = "*"
 "coverage.space" = "*"
 
-# Documentation
 mkdocs = "*"
 docutils = "*"
 pygments = "*"
 
-# Build
 wheel = "*"
 pyinstaller = "*"
 
-# Release
 twine = "*"
 
-# Tooling
 sniffer = "*"
+pync = "*"
