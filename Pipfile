@@ -14,27 +14,35 @@ click = "*"
 
 [dev-packages]
 
+# Linters
 pylint = "*"
 pycodestyle = "*"
 pydocstyle = "*"
+
+# Testing
 pytest = "~=3.3"
 pytest-describe = "*"
 pytest-expecter = "*"
 pytest-random = "*"
 pytest-cov = "*"
-
 freezegun = "*"
+
+# Reports
 "coverage.space" = "*"
 
+# Documentation
 mkdocs = "*"
 docutils = "*"
 pygments = "*"
 
+# Build
 wheel = "*"
 pyinstaller = "*"
 
+# Release
 twine = "*"
 
+# Tooling
 sniffer = "*"
 pync = {version = "*", sys_platform = "== 'darwin'"}
 MacFSEvents = {version = "*", sys_platform = "== 'darwin'"}
