@@ -33,5 +33,5 @@ pyinstaller = "*"
 twine = "*"
 
 sniffer = "*"
-pync = "*"
+pync = {version = "*", sys_platform = "== 'darwin'"}
 MacFSEvents = {version = "*", sys_platform = "== 'darwin'"}
