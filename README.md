@@ -4,6 +4,8 @@ Unix: [![Unix Build Status](https://img.shields.io/travis/jacebrowning/template-
 
 Sample project generated from jacebrowning/template-python.
 
+This project was generated with [cookiecutter](https://github.com/audreyr/cookiecutter) using [jacebrowning/template-python](https://github.com/jacebrowning/template-python).
+
 # Setup
 
 ## Requirements
