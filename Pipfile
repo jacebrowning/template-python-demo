@@ -22,7 +22,7 @@ pydocstyle = "*"
 # Testing
 pytest = "~= 3.3"
 pytest-describe = "*"
-pytest-expecter = "*"
+pytest-expecter = "~=1.1"
 pytest-random = "*"
 pytest-cov = "*"
 freezegun = "*"
