@@ -10,7 +10,7 @@ python_version = "3.6"
 
 [packages]
 
-click = "*"
+demo = { path = ".", editable = true }
 
 [dev-packages]
 
