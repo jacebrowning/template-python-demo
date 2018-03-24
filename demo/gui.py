@@ -1,13 +1,10 @@
 """A sample GUI."""
-
-import logging
 from tkinter import *  # pylint: disable=wildcard-import,unused-wildcard-import
 from tkinter.ttk import *  # pylint: disable=wildcard-import,unused-wildcard-import
 
+import log
+
 from . import utils
-
-
-log = logging.getLogger(__name__)
 
 
 class Application(object):
@@ -97,7 +94,7 @@ class Application(object):
 
 
 def main():
-    logging.basicConfig(level=logging.INFO)
+    log.init()
     Application()
 
 
