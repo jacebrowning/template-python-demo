@@ -3,4 +3,4 @@ search: False
 requirements:
   - requirements.txt
 
-branch: python2-pytest
+branch: python3-pytest
