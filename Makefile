@@ -77,7 +77,7 @@ COVERAGE := pipenv run coverage
 COVERAGE_SPACE := pipenv run coverage.space
 
 RANDOM_SEED ?= $(shell date +%s)
-FAILURES := .cache/v/cache/lastfailed
+FAILURES := .pytest_cache/v/cache/lastfailed
 REPORTS ?= xmlreport
 
 PYTEST_CORE_OPTIONS := -ra -vv
