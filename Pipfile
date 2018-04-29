@@ -8,10 +8,6 @@ name = "pypi"
 
 python_version = "3.6"
 
-[packages]
-
-demo = { path = ".", editable = true }
-
 [dev-packages]
 
 # Linters
@@ -22,7 +18,7 @@ pydocstyle = "*"
 # Testing
 pytest = "~=3.3"
 pytest-describe = "*"
-pytest-expecter = "~=1.1"
+pytest-expecter = "*"
 pytest-random = "*"
 pytest-cov = "*"
 freezegun = "*"
@@ -40,7 +36,8 @@ wheel = "*"
 pyinstaller = "*"
 
 # Release
-twine = "*"
+setuptools = ">= 38.6.0"
+twine = ">= 1.11.0"
 
 # Tooling
 sniffer = "*"
