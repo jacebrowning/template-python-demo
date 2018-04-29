@@ -8,10 +8,6 @@ name = "pypi"
 
 python_version = "3.6"
 
-[packages]
-
-demo = { path = ".", editable = true }
-
 [dev-packages]
 
 # Linters
@@ -37,7 +33,8 @@ wheel = "*"
 pyinstaller = "*"
 
 # Release
-twine = "*"
+setuptools = ">= 38.6.0"
+twine = ">= 1.11.0"
 
 # Tooling
 sniffer = "*"
