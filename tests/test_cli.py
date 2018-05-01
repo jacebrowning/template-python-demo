@@ -2,9 +2,8 @@
 # pylint: disable=redefined-outer-name,unused-variable,expression-not-assigned,singleton-comparison
 
 import pytest
-from expecter import expect
-
 from click.testing import CliRunner
+from expecter import expect
 
 from demo.cli import main
 
