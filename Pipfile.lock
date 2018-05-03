@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "5a13c5d51be6822beeb58d5c2b7c69f50fe00e02a03de8f51d7436bb98678924"
+            "sha256": "5b6933c6fad6321b484b82eae85c6e20668f54068bbee58bde9b280a043490a7"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -210,10 +210,10 @@
         },
         "livereload": {
             "hashes": [
-                "sha256:422de10d7ea9467a1ba27cbaffa84c74b809d96fb1598d9de4b9b676adf35e2c",
-                "sha256:5ed6506f5d526ee712da9f3739c27714e6f3376f3e481728d298efceae0ec83a"
+                "sha256:583179dc8d49b040a9da79bd33de59e160d2a8802b939e304eb359a4419f6498",
+                "sha256:dd4469a8f5a6833576e9f5433f1439c306de15dbbfeceabd32479b1123380fa5"
             ],
-            "version": "==2.5.1"
+            "version": "==2.5.2"
         },
         "macfsevents": {
             "hashes": [
@@ -323,11 +323,11 @@
         },
         "pync": {
             "hashes": [
-                "sha256:85737aab9fc69cf59dc9fe831adbe94ac224944c05e297c98de3c2413f253530"
+                "sha256:91485ba7d157270b274535e8bec802d5ae6963f0bb0183e99510a3235206c419"
             ],
             "index": "pypi",
             "markers": "sys_platform == 'darwin'",
-            "version": "==1.6.1"
+            "version": "==2.0.2"
         },
         "python-dateutil": {
             "hashes": [
@@ -410,10 +410,10 @@
         },
         "tqdm": {
             "hashes": [
-                "sha256:22c760d05b2eb6e96a91ad7ed1b03c9c97e6256fb7716410c27c2cb3265a5913",
-                "sha256:d7bfa112a55290a5e2d0c3263a09b17b24240686fbf20d1ef7c5e8edfbb71ad0"
+                "sha256:139b1672ab75ca6cb670d215ab0b408bec214ca3bed918de50ff265e0ee77617",
+                "sha256:75efcd98827971f96aa9b270e73ccedf1d275b781a9149a0846a7728010d045e"
             ],
-            "version": "==4.23.1"
+            "version": "==4.23.2"
         },
         "twine": {
             "hashes": [
