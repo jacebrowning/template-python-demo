@@ -1,0 +1,67 @@
+[tool.poetry]
+
+name = "demo"
+version = "0.0"
+description = "Sample project generated from jacebrowning/template-python."
+
+license = "MIT"
+
+authors = ["TemplateDemo <jacebrowning@gmail.com>"]
+
+readme = "README.md"
+
+homepage = "https://coverage.space/client/"
+documentation = "https://cli.coverage.space"
+repository = "https://github.com/jacebrowning/coverage-space-cli"
+
+keywords = [
+]
+classifiers = [
+    # TODO: update this list to match your application: https://pypi.org/pypi?%3Aaction=list_classifiers
+    "Development Status :: 1 - Planning",
+    "Natural Language :: English",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.6",
+]
+
+[tool.poetry.dependencies]
+
+python = "^3.6"
+
+# TODO: Add your library's requirements here
+click = "^6.0"
+minilog = "~0.4"
+
+[tool.poetry.dev-dependencies]
+
+# Linters
+isort = "*"
+pylint = "*"
+pycodestyle = "*"
+pydocstyle = "*"
+snowballstemmer = "*" # missing dependency for pydocstyle
+
+# Testing
+pytest = "^3.3"
+pytest-describe = "*"
+pytest-expecter = "*"
+pytest-random = "*"
+pytest-cov = "*"
+freezegun = "*"
+
+# Reports
+coverage-space = "*"
+
+# Documentation
+mkdocs = "*"
+pygments = "*"
+
+# Build
+pyinstaller = "*"
+
+# Tooling
+sniffer = "*"
+MacFSEvents = { version = "*", platform = "darwin" }
+pync = { version = "*", platform = "darwin" }
