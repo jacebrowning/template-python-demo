@@ -7,7 +7,7 @@ import log
 from . import utils
 
 
-class Application(object):
+class Application:
     """A sample class."""
 
     def __init__(self):
