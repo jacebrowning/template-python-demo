@@ -1,4 +1,7 @@
-__project__ = 'TemplateDemo'
-__version__ = '0.0.0'
+from pkg_resources import DistributionNotFound, get_distribution
 
-VERSION = "{0} v{1}".format(__project__, __version__)
+
+try:
+    __version__ = get_distribution('TemplateDemo').version
+except DistributionNotFound:
+    __version__ = '(local)'
