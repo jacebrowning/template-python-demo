@@ -77,7 +77,7 @@ pydocstyle: install
 
 PYTEST := poetry run pytest
 COVERAGE := poetry run coverage
-COVERAGE_SPACE := poetry run coverage.space
+COVERAGE_SPACE := poetry run coveragespace
 
 RANDOM_SEED ?= $(shell date +%s)
 FAILURES := .cache/v/cache/lastfailed
