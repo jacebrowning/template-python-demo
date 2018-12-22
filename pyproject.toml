@@ -10,9 +10,9 @@ authors = ["TemplateDemo <jacebrowning@gmail.com>"]
 
 readme = "README.md"
 
-homepage = "https://coverage.space/client/"
-documentation = "https://cli.coverage.space"
-repository = "https://github.com/jacebrowning/coverage-space-cli"
+homepage = "https://pypi.org/project/demo"
+documentation = "https://demo.readthedocs.io"
+repository = "https://github.com/jacebrowning/template-python-demo"
 
 keywords = [
 ]
