@@ -14,9 +14,7 @@ def runner():
 
 
 def describe_cli():
-
     def describe_conversion():
-
         def when_integer(runner):
             result = runner.invoke(main, ['42'])
 
