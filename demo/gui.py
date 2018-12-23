@@ -1,6 +1,7 @@
 """A sample GUI."""
-from tkinter import *  # pylint: disable=wildcard-import,unused-wildcard-import
-from tkinter.ttk import *  # pylint: disable=wildcard-import,unused-wildcard-import
+
+from tkinter import *
+from tkinter.ttk import *  # type: ignore
 
 import log
 
