@@ -1,1 +1,3 @@
-../README.md
+# demo
+
+Sample project generated from jacebrowning/template-python.
