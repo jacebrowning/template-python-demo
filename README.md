@@ -19,18 +19,16 @@ This project was generated with [cookiecutter](https://github.com/audreyr/cookie
 
 ## Installation
 
-Install TemplateDemo with pip:
+Install this library directly into an activated virtual environment:
 
-```sh
+```
 $ pip install TemplateDemo
 ```
 
-or directly from the source code:
+or add it to your [Poetry](https://poetry.eustace.io/) project:
 
-```sh
-$ git clone https://github.com/jacebrowning/template-python-demo.git
-$ cd template-python-demo
-$ python setup.py install
+```
+$ poetry add TemplateDemo
 ```
 
 # Usage
