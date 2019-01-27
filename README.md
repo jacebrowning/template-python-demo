@@ -21,13 +21,13 @@ This project was generated with [cookiecutter](https://github.com/audreyr/cookie
 
 Install this library directly into an activated virtual environment:
 
-```
+```text
 $ pip install TemplateDemo
 ```
 
 or add it to your [Poetry](https://poetry.eustace.io/) project:
 
-```
+```text
 $ poetry add TemplateDemo
 ```
 
@@ -35,7 +35,7 @@ $ poetry add TemplateDemo
 
 After installation, the package can imported:
 
-```sh
+```text
 $ python
 >>> import demo
 >>> demo.__version__
