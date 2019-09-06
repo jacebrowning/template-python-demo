@@ -1,6 +1,6 @@
 # Overview
 
-Sample project generated from jacebrowning/template-python.
+Sample project generated from Jace's Python Template.
 
 This project was generated with [cookiecutter](https://github.com/audreyr/cookiecutter) using [jacebrowning/template-python](https://github.com/jacebrowning/template-python).
 
