@@ -2,8 +2,9 @@
 # pylint: disable=redefined-outer-name,unused-variable,expression-not-assigned
 
 import pytest
-from click.testing import CliRunner
 from expecter import expect
+
+from click.testing import CliRunner
 
 from demo.cli import main
 
@@ -14,7 +15,9 @@ def runner():
 
 
 def describe_cli():
+
     def describe_conversion():
+
         def when_integer(runner):
             result = runner.invoke(main, ['42'])
 
