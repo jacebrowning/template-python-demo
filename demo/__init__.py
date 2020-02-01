@@ -1,5 +1,4 @@
-from pkg_resources import DistributionNotFound, get_distribution
-
+from pkg_resources import get_distribution, DistributionNotFound
 
 try:
     __version__ = get_distribution('TemplateDemo').version
