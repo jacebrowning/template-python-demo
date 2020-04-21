@@ -531,6 +531,10 @@ colorama = "*"
 isort = ">=4.2.5,<5"
 mccabe = ">=0.6,<0.7"
 
+[package.source]
+reference = "e169e83e52fedc6624235d45e8e8737294a0fedf"
+type = "git"
+url = "https://github.com/PyCQA/pylint"
 [[package]]
 category = "dev"
 description = "Python Wrapper for Mac OS 10.10 Notification Center"
@@ -599,6 +603,10 @@ version = "0.12.0"
 [package.dependencies]
 pytest = ">=2.6.0"
 
+[package.source]
+reference = "453aa9045b265e313f356f1492d8991c02a6aea6"
+type = "git"
+url = "https://github.com/pytest-dev/pytest-describe"
 [[package]]
 category = "dev"
 description = "Better testing with expecter and pytest."
@@ -787,7 +795,7 @@ python-versions = "*"
 version = "1.11.2"
 
 [metadata]
-content-hash = "5246cd8a593c7a240d06fc1625d9f18a9fc7954649a9e60e8963b91fefb3ec9c"
+content-hash = "f8ab5a67d42c1472ebd8c60914c788ea98f1932dd54fc9a9c792a83d358419af"
 python-versions = "^3.8"
 
 [metadata.files]
@@ -1073,10 +1081,7 @@ pygments = [
 pyinstaller = [
     {file = "PyInstaller-3.6.tar.gz", hash = "sha256:3730fa80d088f8bb7084d32480eb87cbb4ddb64123363763cf8f2a1378c1c4b7"},
 ]
-pylint = [
-    {file = "pylint-2.4.4-py3-none-any.whl", hash = "sha256:886e6afc935ea2590b462664b161ca9a5e40168ea99e5300935f6591ad467df4"},
-    {file = "pylint-2.4.4.tar.gz", hash = "sha256:3db5468ad013380e987410a8d6956226963aed94ecb5f9d3a28acca6d9ac36cd"},
-]
+pylint = []
 pync = [
     {file = "pync-2.0.3.tar.gz", hash = "sha256:38b9e61735a3161f9211a5773c5f5ea698f36af4ff7f77fa03e8d1ff0caa117f"},
 ]
@@ -1092,9 +1097,7 @@ pytest-cov = [
     {file = "pytest-cov-2.8.1.tar.gz", hash = "sha256:cc6742d8bac45070217169f5f72ceee1e0e55b0221f54bcf24845972d3a47f2b"},
     {file = "pytest_cov-2.8.1-py2.py3-none-any.whl", hash = "sha256:cdbdef4f870408ebdbfeb44e63e07eb18bb4619fae852f6e760645fa36172626"},
 ]
-pytest-describe = [
-    {file = "pytest-describe-0.12.0.tar.gz", hash = "sha256:569bda96401fe512f4f345f33fd23fa4d718639d42afac62bc03254b5f2b3fdf"},
-]
+pytest-describe = []
 pytest-expecter = [
     {file = "pytest-expecter-2.1.tar.gz", hash = "sha256:70b05fec2a9ae5ec6f15d5c5467c1e2cb9aa2fd85ec9c4783b26e2cf68e66f96"},
     {file = "pytest_expecter-2.1-py3-none-any.whl", hash = "sha256:ab66120671a22be41f7df4c29d76c02d62e3420b8277b1455d2e683a042a0608"},
