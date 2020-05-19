@@ -6,7 +6,7 @@ description = "Sample project generated from Jace's Python Template."
 
 license = "MIT"
 
-authors = ["Jace Browning <jacebrowning@gmail.com>"]
+authors = ["Your Name <you@yourdomain.com>"]
 
 readme = "README.md"
 
