@@ -3,7 +3,7 @@ site_description: Sample project generated from Jace's Python Template.
 site_author: Your Name
 
 repo_url: https://github.com/jacebrowning/template-python-demo
-edit_uri: https://github.com/jacebrowning/template-python-demo/edit/master/docs
+edit_uri: https://github.com/jacebrowning/template-python-demo/edit/main/docs
 
 theme: readthedocs
 
