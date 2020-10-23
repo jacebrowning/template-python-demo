@@ -32,13 +32,13 @@ class Application:
         sticky = {'sticky': NSEW}
 
         # Configure grid
-        frame = Frame(root, **padded)
+        frame = Frame(root, **padded)  # type: ignore
         frame.rowconfigure(0, weight=1)
         frame.rowconfigure(1, weight=1)
         frame.columnconfigure(0, weight=1)
 
         def frame_inputs(root):
-            frame = Frame(root, **padded)
+            frame = Frame(root, **padded)  # type: ignore
 
             # Configure grid
             frame.rowconfigure(0, weight=1)
@@ -63,7 +63,7 @@ class Application:
             return frame
 
         def frame_commands(root):
-            frame = Frame(root, **padded)
+            frame = Frame(root, **padded)  # type: ignore
 
             # Configure grid
             frame.rowconfigure(0, weight=1)
