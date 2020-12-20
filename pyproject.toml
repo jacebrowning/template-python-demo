@@ -23,12 +23,12 @@ classifiers = [
     "Operating System :: OS Independent",
     "Programming Language :: Python",
     "Programming Language :: Python :: 3",
-    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
 ]
 
 [tool.poetry.dependencies]
 
-python = "^3.8"
+python = "^3.9"
 
 # TODO: Remove these and add your library's requirements
 click = "^7.0"
