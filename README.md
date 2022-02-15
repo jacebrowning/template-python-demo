@@ -8,8 +8,9 @@ This project was generated with [cookiecutter](https://github.com/audreyr/cookie
 [![Windows Build Status](https://img.shields.io/appveyor/ci/jacebrowning/template-python-demo.svg?label=windows)](https://ci.appveyor.com/project/jacebrowning/template-python-demo)
 [![Coverage Status](https://img.shields.io/codecov/c/gh/jacebrowning/template-python-demo)](https://codecov.io/gh/jacebrowning/template-python-demo)
 [![Scrutinizer Code Quality](https://img.shields.io/scrutinizer/g/jacebrowning/template-python-demo.svg)](https://scrutinizer-ci.com/g/jacebrowning/template-python-demo)
-[![PyPI Version](https://img.shields.io/pypi/v/TemplateDemo.svg)](https://pypi.org/project/TemplateDemo)
 [![PyPI License](https://img.shields.io/pypi/l/TemplateDemo.svg)](https://pypi.org/project/TemplateDemo)
+[![PyPI Version](https://img.shields.io/pypi/v/TemplateDemo.svg)](https://pypi.org/project/TemplateDemo)
+[![PyPI Downloads](https://img.shields.io/pypi/dm/TemplateDemo.svg?color=orange)](https://pypistats.org/packages/TemplateDemo)
 
 # Setup
 
