@@ -29,8 +29,8 @@ class Application:
         self.root.mainloop()
 
     def init(self, root):
-        padded = {'padding': 5}
-        sticky = {'sticky': NSEW}
+        padded = {"padding": 5}
+        sticky = {"sticky": NSEW}
 
         # Configure grid
         frame = Frame(root, **padded)  # type: ignore
@@ -73,7 +73,7 @@ class Application:
             # Place widgets
             button = Button(frame, text="Calculate", command=self.calculate)
             button.grid(column=0, row=0)
-            self.root.bind('<Return>', self.calculate)
+            self.root.bind("<Return>", self.calculate)
 
             return frame
 
@@ -99,5 +99,5 @@ def main():
     Application()
 
 
-if __name__ == '__main__':  # pragma: no cover
+if __name__ == "__main__":  # pragma: no cover
     main()

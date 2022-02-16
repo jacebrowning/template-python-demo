@@ -5,7 +5,6 @@ from demo import utils
 
 
 def describe_feet_to_meters():
-
     def when_integer(expect):
         expect(utils.feet_to_meters(42)) == 12.80165
 
