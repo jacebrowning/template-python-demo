@@ -7,7 +7,7 @@ from . import utils
 
 
 @click.command()
-@click.argument("feet")
+@click.argument('feet')
 def main(feet=None):
     log.init()
 
@@ -17,5 +17,5 @@ def main(feet=None):
         click.echo(meters)
 
 
-if __name__ == "__main__":  # pragma: no cover
+if __name__ == '__main__':  # pragma: no cover
     main()
