@@ -12,13 +12,13 @@ This project was generated with [cookiecutter](https://github.com/audreyr/cookie
 [![PyPI Version](https://img.shields.io/pypi/v/TemplateDemo.svg)](https://pypi.org/project/TemplateDemo)
 [![PyPI Downloads](https://img.shields.io/pypi/dm/TemplateDemo.svg?color=orange)](https://pypistats.org/packages/TemplateDemo)
 
-# Setup
+## Setup
 
-## Requirements
+### Requirements
 
 * Python 3.9+
 
-## Installation
+### Installation
 
 Install it directly into an activated virtual environment:
 
@@ -32,7 +32,7 @@ or add it to your [Poetry](https://poetry.eustace.io/) project:
 $ poetry add TemplateDemo
 ```
 
-# Usage
+## Usage
 
 After installation, the package can imported:
 
