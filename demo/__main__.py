@@ -3,7 +3,7 @@
 """Package entry point."""
 
 
-from demo.gui import main
+from demo.cli import main
 
 if __name__ == "__main__":  # pragma: no cover
-    main()
+    main()  # pylint: disable=no-value-for-parameter
