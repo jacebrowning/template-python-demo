@@ -10,8 +10,8 @@ license = "MIT"
 authors = ["Your Name <you@yourdomain.com>"]
 
 readme = "README.md"
-homepage = "https://pypi.org/project/demo"
-documentation = "https://demo.readthedocs.io"
+homepage = "https://pypi.org/project/TemplateDemo"
+documentation = "https://TemplateDemo.readthedocs.io"
 repository = "https://github.com/jacebrowning/template-python-demo"
 
 keywords = [
