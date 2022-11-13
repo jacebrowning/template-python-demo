@@ -23,12 +23,12 @@ classifiers = [
     "Operating System :: OS Independent",
     "Programming Language :: Python",
     "Programming Language :: Python :: 3",
-    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.11",
 ]
 
 [tool.poetry.dependencies]
 
-python = "^3.9"
+python = "^3.11"
 
 # TODO: Remove these and add your library's requirements
 click = "*"
@@ -38,13 +38,14 @@ minilog = "*"
 
 # Formatters
 black = "^22.1"
+tomli = "*" # missing 'black' dependency
 isort = "^5.10"
 
 # Linters
-mypy = "~0.931"
+mypy = "~0.990"
 pydocstyle = "^6.1"
-pylint = "~2.12.2"
-types-setuptools = "*"
+pylint = "~2.15"
+wrapt = "*" # missing 'pylint' dependency
 
 # Testing
 pytest = "^7.1"
