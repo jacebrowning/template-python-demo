@@ -34,7 +34,7 @@ $ poetry add TemplateDemo
 
 ## Usage
 
-After installation, the package can imported:
+After installation, the package can be imported:
 
 ```text
 $ python
