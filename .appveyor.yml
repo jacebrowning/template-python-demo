@@ -14,7 +14,6 @@ install:
   # Install system dependencies
   - choco install make
   - curl -sSL https://install.python-poetry.org | python -
-  - set PATH=%USERPROFILE%\AppData\Roaming\Python\Scripts;%PATH%
   # Check system dependencies
   - make doctor
   # Install project dependencies
